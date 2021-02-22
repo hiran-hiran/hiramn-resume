@@ -1,0 +1,52 @@
+.content-wrap {
+	width: 360px;
+	padding: 8% 0 0;
+	margin: auto;
+
+	.c-button {
+		display: block;
+		width: 100%;
+    margin-top: 20px;
+		padding: 15px;
+		outline: 0;
+		background: #8b8b8b;
+		border: 0;
+		color: #ffffff;
+		font-size: 14px;
+		text-align: center;
+		transition: opacity 0.2s ease-in-out;
+		border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.7;
+    }
+	}
+
+	.p-login {
+		h1 {
+			font-size: 32px;
+			text-align: center;
+		}
+
+		.form {
+			padding: 8%;
+			// background-color:antiquewhite;
+
+			input {
+				outline: 0;
+				background: #f2f2f2;
+				width: 100%;
+				border: 0;
+				margin: 0 0 30px;
+				padding: 15px;
+				box-sizing: border-box;
+				font-size: 14px;
+				border-radius: 5px;
+			}
+			label {
+				display: block;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}

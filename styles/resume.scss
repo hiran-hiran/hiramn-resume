@@ -1,0 +1,94 @@
+.resume {
+	table {
+		border-collapse: collapse;
+		cellspacing: 0;
+		cellpadding: 0;
+		table-layout: fixed;
+		width: 0;
+		margin: 60px auto;
+	}
+
+	tr {
+		height: 35px;
+	}
+	.row01 {
+		height: 0px;
+	}
+	.row01 th:nth-child(1) {
+		width: 80px;
+	}
+	.row01 th:nth-child(2) {
+		width: 45px;
+	}
+	.row01 th:nth-child(3) {
+		width: 200px;
+	}
+	.row01 th:nth-child(4) {
+		width: 80px;
+	}
+	.row01 th:nth-child(5) {
+		width: 80px;
+	}
+	.row01 th:nth-child(6) {
+		width: 160px;
+	}
+
+	.row02 td:nth-child(1) {
+		font-size: 2rem;
+		line-height: 2rem;
+		text-align: center;
+	}
+	.row02 td:nth-child(5) {
+		text-align: right;
+	}
+
+	.row03 td:nth-child(1) {
+	}
+
+	td {
+		padding: 0 5px;
+	}
+	td img {
+		max-width: 100%;
+	}
+	.bd-t-s {
+		border-top: 1px solid;
+	}
+	.bd-r-s {
+		border-right: 1px solid;
+	}
+	.bd-b-s {
+		border-bottom: 1px solid;
+	}
+	.bd-l-s {
+		border-left: 1px solid;
+	}
+	.bd-t-dt {
+		border-top: 1px dotted;
+	}
+	.bd-r-dt {
+		border-right: 1px dotted;
+	}
+	.bd-b-dt {
+		border-bottom: 1px dotted;
+	}
+	.bd-l-dt {
+		border-left: 1px dotted;
+	}
+	.bd-t-db {
+		border-top: 4px double;
+	}
+	.center {
+		text-align: center;
+	}
+
+	.img {
+		padding: 10px;
+	}
+	.img img {
+		display: block;
+		width: 160px;
+		height: 160px;
+		object-fit: cover;
+	}
+}
