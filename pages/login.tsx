@@ -70,6 +70,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// sadfjh@asdf.com
-// jhb25ogsad87

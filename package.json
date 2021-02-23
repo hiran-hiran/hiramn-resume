@@ -11,6 +11,7 @@
     "@reduxjs/toolkit": "^1.5.0",
     "@types/react-redux": "^7.1.16",
     "firebase": "^8.2.9",
+    "github-markdown-css": "^4.0.0",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",

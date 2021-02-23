@@ -8,7 +8,7 @@ import Layout from "../src/components/Layout";
 
 export default function Home() {
 	const router = useRouter();
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	const signOut = async () => {
 		await auth.signOut();
@@ -26,17 +26,25 @@ export default function Home() {
 
 			<div className="content-wrap">
 				<Layout>
-					<p>こちらでは、履歴書と職務経歴書がご確認いただけます。</p>
-          <Link href="/resume">
-						<a className="">履歴書はこちら</a>
-					</Link>
-					<Link href="/cv">
-						<a className="">職務経歴書はこちら</a>
-					</Link>
+					<div className="top">
+						<p>
+							こちらでは、履歴書と職務経歴書が
+							<br />
+							ご確認いただけます。
+						</p>
+						<div className="link">
+							<Link href="/resume">
+								<a className="">履歴書はこちら</a>
+							</Link>
+							<Link href="/cv">
+								<a className="">職務経歴書はこちら</a>
+							</Link>
+						</div>
 
-					<button className="c-button" onClick={signOut}>
-						ログアウト
-					</button>
+						<button className="c-button" onClick={signOut}>
+							ログアウト
+						</button>
+					</div>
 				</Layout>
 			</div>
 		</>

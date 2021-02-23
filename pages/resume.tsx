@@ -1,7 +1,16 @@
-import React, { VFC } from "react";
+import { NextPage, GetStaticProps } from "next";
+
+import Link from "next/link";
 import Layout from "../src/components/Layout";
 
-const resume: VFC = () => {
+type Props = {
+	data: {};
+};
+
+const resume: NextPage<Props> = ({ data }) => {
+	const d = data[0];
+	console.log(d);
+
 	return (
 		<Layout>
 			<div className="resume">
@@ -22,18 +31,18 @@ const resume: VFC = () => {
 							<td></td>
 							<td></td>
 							<td></td>
-							<td className="date">2016年 12月 14日 現在</td>
+							<td className="date">2021年 2月 25日 現在</td>
 						</tr>
 						<tr className="row03">
-							<td className="bd-t-s bd-l-s">フリガナ</td>
+							<td className="bd-t-s bd-l-s"></td>
 							<td colSpan={3} className="bd-t-s bd-l-s">
-								ヤマダ タロウ
+								{d.basic.name_kana}
 							</td>
 							<td rowSpan={3} className="bd-t-s bd-l-dt center">
-								男
+								{d.basic.gender}
 							</td>
 							<td rowSpan={4} className="bd-t-s bd-r-s bd-l-s center img">
-								<img src="/img.jpg" alt="" />
+								<img src={d.basic?.img.url} alt="" />
 							</td>
 						</tr>
 						<tr>
@@ -41,48 +50,46 @@ const resume: VFC = () => {
 								氏 名
 							</td>
 							<td colSpan={3} rowSpan={2} className="bd-t-dt bd-l-s">
-								山田 太郎
+								{d.basic.name}
 							</td>
 						</tr>
 						<tr></tr>
 						<tr>
 							<td className="bd-t-s bd-l-s">生年月日</td>
 							<td colSpan={4} className="bd-t-s bd-l-s">
-								1987年 01月 01日生 (満29歳)
+								{d.basic.birth}
 							</td>
 						</tr>
 						<tr>
 							<td className="bd-t-s bd-l-s">フリガナ</td>
 							<td colSpan={5} className="bd-t-s bd-r-s bd-l-s">
-								トウキョウトミナトクシバコウエン4-2-8
+								{d.basic.address_kana}
 							</td>
 						</tr>
 						<tr>
 							<td className="bd-t-dt bd-l-s">住 所</td>
 							<td colSpan={5} className="bd-t-dt bd-r-s">
-								( 〒 105-0011 )
+								( {d.basic.zip} )
 							</td>
 						</tr>
 						<tr>
 							<td colSpan={6} rowSpan={2} className="bd-r-s bd-l-s">
-								東京都港区芝公園4ｰ2ｰ8
+								{d.basic.address}
 							</td>
 						</tr>
 						<tr></tr>
 						<tr>
 							<td className="bd-t-s bd-l-s">電話</td>
-							<td colSpan={2} className="bd-t-s">
-								000-1111-2222
-							</td>
+							<td colSpan={2} className="bd-t-s"></td>
 							<td className="bd-t-s bd-l-s">携帯電話</td>
 							<td colSpan={2} className="bd-t-s bd-r-s">
-								000-3333-4444
+								{d.basic.phone}
 							</td>
 						</tr>
 						<tr>
 							<td className="bd-t-s bd-l-s">E-mail</td>
 							<td colSpan={5} className="bd-t-s bd-r-s">
-								aaaa@example.com
+								{d.basic.email}
 							</td>
 						</tr>
 						<tr>
@@ -99,39 +106,21 @@ const resume: VFC = () => {
 								学歴
 							</td>
 						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center">平成xx</td>
-							<td className="bd-t-dt bd-l-dt center">4</td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-								○○高校 入学
-							</td>
-						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center">平成xx</td>
-							<td className="bd-t-dt bd-l-dt center">3</td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-								○○高校 卒業
-							</td>
-						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center">平成xx</td>
-							<td className="bd-t-dt bd-l-dt center">4</td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-								○○大学 △△学部 □□学科 入学
-							</td>
-						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center">平成xx</td>
-							<td className="bd-t-dt bd-l-dt center">3</td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-								○○大学 △△学部 □□学科 卒業
-							</td>
-						</tr>
+						{d.educational.map((el, id) => (
+							<tr key={id}>
+								<td className="bd-t-dt bd-l-s center">{el.year}</td>
+								<td className="bd-t-dt bd-l-dt center">{el.month}</td>
+								<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
+									{el.school}
+								</td>
+							</tr>
+						))}
 						<tr>
 							<td className="bd-t-dt bd-l-s center"></td>
 							<td className="bd-t-dt bd-l-dt center"></td>
 							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt center"></td>
 						</tr>
+
 						<tr>
 							<td className="bd-t-dt bd-l-s center"></td>
 							<td className="bd-t-dt bd-l-dt center"></td>
@@ -139,28 +128,15 @@ const resume: VFC = () => {
 								職歴
 							</td>
 						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center">平成xx</td>
-							<td className="bd-t-dt bd-l-dt center">4</td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-								○○株式会社 入社
-							</td>
-						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center">平成xx</td>
-							<td className="bd-t-dt bd-l-dt center">12</td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-								○○株式会社 退職
-							</td>
-						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center">平成xx</td>
-							<td className="bd-t-dt bd-l-dt center">1</td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-								株式会社○○ 入社
-							</td>
-							<td></td>
-						</tr>
+						{d.work.map((el, id) => (
+							<tr key={id}>
+								<td className="bd-t-dt bd-l-s center">{el.year}</td>
+								<td className="bd-t-dt bd-l-dt center">{el.month}</td>
+								<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
+									{el.school}
+								</td>
+							</tr>
+						))}
 						<tr>
 							<td className="bd-t-dt bd-b-s bd-l-s center"></td>
 							<td className="bd-t-dt bd-b-s bd-l-dt center"></td>
@@ -184,25 +160,7 @@ const resume: VFC = () => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr className="row03">
-							<td className="bd-t-s bd-l-s center">年</td>
-							<td className="bd-t-s bd-l-dt center">月</td>
-							<td colSpan={4} className="bd-t-s bd-r-s bd-l-dt center">
-								賞罰
-							</td>
-						</tr>
-						<tr>
-							<td className="bd-t-db bd-l-s center"></td>
-							<td className="bd-t-db bd-l-dt center"></td>
-							<td colSpan={4} className="bd-t-db bd-r-s bd-l-dt center">
-								賞罰なし
-							</td>
-						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center"></td>
-							<td className="bd-t-dt bd-l-dt center"></td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt center"></td>
-						</tr>
+						<tr></tr>
 						<tr>
 							<td className="bd-t-s bd-l-s center">年</td>
 							<td className="bd-t-s bd-l-dt center">月</td>
@@ -210,37 +168,46 @@ const resume: VFC = () => {
 								免許・資格
 							</td>
 						</tr>
+						{d.license.map((el, id) => (
+							<tr key={id}>
+								<td className="bd-t-dt bd-l-s center">{el.year}</td>
+								<td className="bd-t-dt bd-l-dt center">{el.month}</td>
+								<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
+									{el.school}
+								</td>
+							</tr>
+						))}
+
 						<tr>
-							<td className="bd-t-db bd-l-s center">平成xx</td>
-							<td className="bd-t-db bd-l-dt center">1</td>
-							<td colSpan={4} className="bd-t-db bd-r-s bd-l-dt">
-								普通自動車運転免許 取得
+							<td colSpan={6} className="bd-t-s bd-r-s bd-l-s">
+								志望動機
 							</td>
 						</tr>
 						<tr>
-							<td className="bd-t-dt bd-l-s center"></td>
-							<td className="bd-t-dt bd-l-dt center"></td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt"></td>
+							<td
+								colSpan={6}
+								rowSpan={5}
+								className="bd-t-s bd-r-s bd-b-s bd-l-s"
+								dangerouslySetInnerHTML={{ __html: `${d.reason}` }}
+							/>
 						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center"></td>
-							<td className="bd-t-dt bd-l-dt center"></td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt"></td>
-						</tr>
-						<tr>
-							<td className="bd-t-dt bd-l-s center"></td>
-							<td className="bd-t-dt bd-l-dt center"></td>
-							<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt"></td>
-						</tr>
+						<tr></tr>
+						<tr></tr>
+						<tr></tr>
+						<tr></tr>
+
 						<tr>
 							<td colSpan={6} className="bd-t-s bd-r-s bd-l-s">
 								本人希望記入欄
 							</td>
 						</tr>
 						<tr>
-							<td colSpan={6} rowSpan={5} className="bd-t-s bd-r-s bd-b-s bd-l-s">
-								特に希望する事項はありません。
-							</td>
+							<td
+								colSpan={6}
+								rowSpan={5}
+								className="bd-t-s bd-r-s bd-b-s bd-l-s"
+								dangerouslySetInnerHTML={{ __html: `${d.request}` }}
+							/>
 						</tr>
 						<tr></tr>
 						<tr></tr>
@@ -248,9 +215,28 @@ const resume: VFC = () => {
 						<tr></tr>
 					</tbody>
 				</table>
+
+				<Link href="/">
+					<a className="c-button">戻る</a>
+				</Link>
 			</div>
 		</Layout>
 	);
 };
 
 export default resume;
+
+export const getStaticProps: GetStaticProps = async () => {
+	const key = {
+		headers: { "X-API-KEY": process.env.API_KEY },
+	};
+
+	const res = await fetch(process.env.END_POINT + "resume", key);
+	const data = await res.json();
+
+	return {
+		props: {
+			data: data.contents,
+		},
+	};
+};

@@ -1,0 +1,29 @@
+.top{
+  p{
+    margin-bottom: 60px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  .link{
+    a{
+      position: relative;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 14px;
+      &::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 1%;
+        transform: translateY(-50%) rotate(45deg);
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        
+      }
+    }
+  }
+}
