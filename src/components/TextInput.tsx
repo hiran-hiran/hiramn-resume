@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { VFC } from "react";
 
 type Props = {
   id: string
@@ -8,7 +8,7 @@ type Props = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const TextInput: FC<Props> = (props) => {
+const TextInput: VFC<Props> = (props) => {
 	return (
 		<>
       <input

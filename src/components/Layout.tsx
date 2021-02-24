@@ -4,7 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../firebase/firebase";
 import { login, logout, selectUser } from "../features/userSlice";
 
-const Layout: FC = ({ children }) => {
+type Props = {
+	children: React.ReactNode;
+};
+
+const Layout: FC<Props> = ({ children }) => {
 	const router = useRouter();
 	const dispatch = useDispatch();
 	const userState = useSelector(selectUser);
@@ -14,7 +18,6 @@ const Layout: FC = ({ children }) => {
 			auth.onAuthStateChanged((authUser) => {
 				if (authUser) {
 					dispatch(login(authUser.uid));
-					// router.push("/");
 				} else {
 					dispatch(logout());
 					router.push("/login");
@@ -23,11 +26,7 @@ const Layout: FC = ({ children }) => {
 		}
 	}, []);
 
-	return (
-		<>
-			{children}
-		</>
-	);
+	return <>{children}</>;
 };
 
 export default Layout;

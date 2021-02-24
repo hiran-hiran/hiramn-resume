@@ -1,6 +1,8 @@
-import fs from "fs";
+import Head from "next/head";
 import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
+
+import fs from "fs";
 import Layout from "../src/components/Layout";
 import ReactMarkdown from "react-markdown";
 import "github-markdown-css";
@@ -11,16 +13,21 @@ type Props = {
 
 const Cv: NextPage<Props> = ({ cv }) => {
 	return (
-		<Layout>
-			<div className="cv">
-				<div className="markdown-body">
-					<ReactMarkdown>{cv}</ReactMarkdown>
+		<>
+			<Head>
+				<title>職務経歴書 | ヒラタの履歴書</title>
+			</Head>
+			<Layout>
+				<div className="cv">
+					<div className="markdown-body">
+						<ReactMarkdown>{cv}</ReactMarkdown>
+					</div>
+					<Link href="/">
+						<a className="button">Back</a>
+					</Link>
 				</div>
-				<Link href="/">
-					<a className="button">戻る</a>
-				</Link>
-			</div>
-		</Layout>
+			</Layout>
+		</>
 	);
 };
 

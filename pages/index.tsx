@@ -21,35 +21,35 @@ export default function Home() {
 		<>
 			<Head>
 				<title>ヒラタの履歴書</title>
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<div className="p-top">
-				<Layout />
-				<div className="content-wrap">
-					<div className="left">
-						<div className="left-inner">
-							<h1>Welcome!</h1>
-							<p>こちらでは、私の履歴書と職務経歴書がご確認いただけます。</p>
-							<button className="button button-white" onClick={signOut}>
-								ログアウト
-							</button>
+				<Layout>
+					<div className="content-wrap">
+						<div className="left">
+							<div className="left-inner">
+								<h1>Welcome!</h1>
+								<p>こちらでは、私の履歴書と職務経歴書がご確認いただけます。</p>
+								<button className="button button-white" onClick={signOut}>
+									Logout
+								</button>
+							</div>
 						</div>
-					</div>
 
-					<div className="right">
-						<div className="right-inner">
-							<div className="link">
-								<Link href="/resume">
-									<a className="link">履歴書はこちら</a>
-								</Link>
-								<Link href="/cv">
-									<a className="link">職務経歴書はこちら</a>
-								</Link>
+						<div className="right">
+							<div className="right-inner">
+								<div className="link">
+									<Link href="/resume">
+										<a className="link">履歴書はこちら</a>
+									</Link>
+									<Link href="/cv">
+										<a className="link">職務経歴書はこちら</a>
+									</Link>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</Layout>
 			</div>
 		</>
 	);

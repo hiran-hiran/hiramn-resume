@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { AppProps } from "next/app";
 import "../styles/globals.css";
 import "../styles/common.scss";
@@ -7,14 +8,17 @@ import { Provider } from "react-redux";
 import store from "../src/store/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
-
-
 	return (
-		<Provider store={store}>
-			<Component {...pageProps} />
-		</Provider>
+		<>
+			<Head>
+				<title>ヒラタの履歴書</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<Provider store={store}>
+				<Component {...pageProps} />
+			</Provider>
+		</>
 	);
 }
 
-// jhsfdpaldkjbsf14l
 export default MyApp;
