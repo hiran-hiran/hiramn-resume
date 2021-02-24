@@ -5,7 +5,7 @@ import Link from "next/link";
 import Layout from "../src/components/Layout";
 
 type Props = {
-	data: {};
+	data: any
 };
 
 const Resume: NextPage<Props> = ({ data }) => {
@@ -111,7 +111,7 @@ const Resume: NextPage<Props> = ({ data }) => {
 									学歴
 								</td>
 							</tr>
-							{d.educational.map((el, id) => (
+							{d.educational.map((el: any, id: string) => (
 								<tr key={id}>
 									<td className="bd-t-dt bd-l-s center">{el.year}</td>
 									<td className="bd-t-dt bd-l-dt center">{el.month}</td>
@@ -133,7 +133,7 @@ const Resume: NextPage<Props> = ({ data }) => {
 									職歴
 								</td>
 							</tr>
-							{d.work.map((el, id) => (
+							{d.work.map((el: any, id: string) => (
 								<tr key={id}>
 									<td className="bd-t-dt bd-l-s center">{el.year}</td>
 									<td className="bd-t-dt bd-l-dt center">{el.month}</td>
@@ -173,7 +173,7 @@ const Resume: NextPage<Props> = ({ data }) => {
 									免許・資格
 								</td>
 							</tr>
-							{d.license.map((el, id) => (
+							{d.license.map((el: any, id: string) => (
 								<tr key={id}>
 									<td className="bd-t-dt bd-l-s center">{el.year}</td>
 									<td className="bd-t-dt bd-l-dt center">{el.month}</td>
@@ -233,7 +233,7 @@ const Resume: NextPage<Props> = ({ data }) => {
 export default Resume;
 
 export const getStaticProps: GetStaticProps = async () => {
-	const key = {
+	const key: {} = {
 		headers: { "X-API-KEY": process.env.API_KEY },
 	};
 
