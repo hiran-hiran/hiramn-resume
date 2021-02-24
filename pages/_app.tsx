@@ -1,7 +1,6 @@
 import { AppProps } from "next/app";
 import "../styles/globals.css";
-import "../styles/login.scss";
-import "../styles/top.scss";
+import "../styles/common.scss";
 import "../styles/resume.scss";
 import "../styles/cv.scss";
 import { Provider } from "react-redux";

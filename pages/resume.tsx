@@ -1,5 +1,4 @@
 import { NextPage, GetStaticProps } from "next";
-
 import Link from "next/link";
 import Layout from "../src/components/Layout";
 
@@ -217,7 +216,7 @@ const resume: NextPage<Props> = ({ data }) => {
 				</table>
 
 				<Link href="/">
-					<a className="c-button">戻る</a>
+					<a className="button">戻る</a>
 				</Link>
 			</div>
 		</Layout>

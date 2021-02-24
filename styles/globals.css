@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
-html,
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Noto+Sans+JP&display=swap');
+/* html, */
 body {
-	padding: 0;
+	padding: 60px 0;
 	margin: 0;
-	font-family: "Noto Sans JP", sans-serif;
+	font-family: "Montserrat", "Noto Sans JP", sans-serif;
 }
 
 a {
@@ -14,6 +14,9 @@ a {
 
 * {
 	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @media print {
@@ -27,31 +30,5 @@ html {
 	font-size: 62.5%;
 }
 body {
-	font-size: 1.2rem;
-}
-
-
-.content-wrap {
-	width: 360px;
-	padding: 8% 0;
-	margin: auto;
-}
-
-.c-button {
-	display: block;
-	width: 360px;
-	margin: 60px auto 0;
-	padding: 15px;
-	outline: 0;
-	background: #8b8b8b;
-	border: 0;
-	color: #ffffff;
-	font-size: 14px;
-	text-align: center;
-	transition: opacity 0.2s ease-in-out;
-	border-radius: 5px;
-	cursor: pointer;
-}
-.c-button:hover {
-	opacity: 0.7;
+	font-size: 1.3rem;
 }

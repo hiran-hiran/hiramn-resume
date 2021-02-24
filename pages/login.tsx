@@ -38,34 +38,49 @@ const Login = () => {
 	}, []);
 
 	return (
-		<div className="content-wrap">
-			<section className="p-login">
-				<h1>ログイン</h1>
-				<div className="form">
-					<div className="input">
-						<TextInput
-							id="email"
-							className="auth-input"
-							type="email"
-							placeholder="メールアドレス"
-							onChange={(e) => setEmail(e.target.value)}
-						/>
+		<section className="p-login">
+			<div className="content-wrap">
+				<section className="left">
+					<div className="left-inner">
+						<h1>Thank you for visiting</h1>
+						<p>
+							この度は、ご訪問頂きありがとうございます。
+							<br />
+							お知らせしました、ログイン情報でログインお願いいたします。
+						</p>
 					</div>
-					<div className="input">
-						<TextInput
-							id="password"
-							className="auth-input"
-							type="password"
-							placeholder="パスワード"
-							onChange={(e) => setPassword(e.target.value)}
-						/>
+				</section>
+				<section className="right">
+					<div className="right-inner">
+						<h1>Login</h1>
+
+						<div className="form">
+							<div className="input">
+								<TextInput
+									id="email"
+									className="auth-input"
+									type="email"
+									placeholder="メールアドレス"
+									onChange={(e) => setEmail(e.target.value)}
+								/>
+							</div>
+							<div className="input">
+								<TextInput
+									id="password"
+									className="auth-input"
+									type="password"
+									placeholder="パスワード"
+									onChange={(e) => setPassword(e.target.value)}
+								/>
+							</div>
+							<button className="button" type="button" onClick={logIn}>
+								Login
+							</button>
+						</div>
 					</div>
-					<button className="c-button" type="button" onClick={logIn}>
-						ログイン
-					</button>
-				</div>
-			</section>
-		</div>
+				</section>
+			</div>
+		</section>
 	);
 };
 
