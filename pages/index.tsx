@@ -28,8 +28,8 @@ export default function Home() {
 					<div className="content-wrap">
 						<div className="left">
 							<div className="left-inner">
-								<h1>Welcome!</h1>
-								<p>こちらでは、私の履歴書と職務経歴書がご確認いただけます。</p>
+								<span className="head">Welcome!</span>
+								<h1 className="title">こちらでは、私の履歴書と職務経歴書がご確認いただけます。</h1>
 								<button className="button button-white" onClick={signOut}>
 									Logout
 								</button>

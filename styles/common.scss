@@ -39,14 +39,16 @@
 		transition: transform 0.6s ease-in-out;
 	}
 
-	h1 {
+	.head {
+    display: block;
 		font-size: 32px;
+    font-weight: bold;
 		text-align: center;
 	}
-	p {
+	.title {
 		text-align: left;
 		margin-top: 40px;
-		font-size: 13px;
+		font-size: 14px;
 		line-height: 1.8;
 	}
 

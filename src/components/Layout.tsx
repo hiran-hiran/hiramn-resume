@@ -45,10 +45,10 @@ const Layout: FC<Props> = ({ children }) => {
 			<div className="theme-btn-container">
 				<div onClick={handleClick} className={themeState ? "theme-btn-wrap isDark" : "theme-btn-wrap"}>
 					<div className="dark">
-						<img src="/dark.png" alt="" />
+						<img src="/dark.png" alt="dark mode" />
 					</div>
 					<div className="light">
-						<img src="/light.png" alt="" />
+						<img src="/light.png" alt="light mode" />
 					</div>
 					<div className="btn-theme"></div>
 				</div>

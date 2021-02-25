@@ -51,8 +51,8 @@ const Login: NextPage = () => {
 					<div className="content-wrap">
 						<section className="left">
 							<div className="left-inner">
-								<h1>Thank you for visiting</h1>
-								<p>
+								<h1 className="head">Thank you for visiting</h1>
+								<p className="title">
 									この度は、ご訪問頂きありがとうございます。
 									<br />
 									お知らせしました、ログイン情報でログインお願いいたします。
