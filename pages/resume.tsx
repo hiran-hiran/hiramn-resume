@@ -74,7 +74,7 @@ const Resume: NextPage<Props> = ({ data }) => {
 							<tr>
 								<td className="bd-t-dt bd-l-s">住 所</td>
 								<td colSpan={5} className="bd-t-dt bd-r-s">
-									( {d.basic.zip} )
+									( 〒{d.basic.zip} )
 								</td>
 							</tr>
 							<tr>

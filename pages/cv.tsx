@@ -5,6 +5,7 @@ import Link from "next/link";
 import fs from "fs";
 import Layout from "../src/components/Layout";
 import ReactMarkdown from "react-markdown";
+import gfm from 'remark-gfm';
 import "github-markdown-css";
 
 type Props = {
@@ -20,7 +21,7 @@ const Cv: NextPage<Props> = ({ cv }) => {
 			<Layout>
 				<div className="cv">
 					<div className="markdown-body">
-						<ReactMarkdown>{cv}</ReactMarkdown>
+						<ReactMarkdown plugins={[gfm]} source={cv} />
 					</div>
 					<Link href="/">
 						<a className="button">Back</a>
