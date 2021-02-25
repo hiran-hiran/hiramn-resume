@@ -94,4 +94,37 @@
 		height: 160px;
 		object-fit: cover;
 	}
+
+
+
+	@media screen and (max-width: 768px) {
+    table {
+      width: 100%;
+      font-size: 1.1rem;
+    }
+    .row01 th:nth-child(1) {
+      width: 12%;
+    }
+    .row01 th:nth-child(2) {
+      width: 8%;
+    }
+    .row01 th:nth-child(3) {
+      width: 31%;
+    }
+    .row01 th:nth-child(4) {
+      width: 12%;
+    }
+    .row01 th:nth-child(5) {
+      width: 12%;
+    }
+    .row01 th:nth-child(6) {
+      width: 25%;
+    }
+    .row02 td:nth-child(1) {
+      font-size: 1.3rem;
+    }
+    .img{
+      padding: 0;
+    }
+  }
 }

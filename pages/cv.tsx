@@ -21,7 +21,7 @@ const Cv: NextPage<Props> = ({ cv }) => {
 			<Layout>
 				<div className="cv">
 					<div className="markdown-body">
-						<ReactMarkdown plugins={[gfm]} source={cv} />
+						<ReactMarkdown plugins={[gfm]} source={cv} linkTarget={"_blank"} />
 					</div>
 					<Link href="/">
 						<a className="button">Back</a>

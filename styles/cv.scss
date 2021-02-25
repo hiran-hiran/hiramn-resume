@@ -1,7 +1,11 @@
-.cv{
-  width: 645px;
-  margin: auto;
-  .button{
-    margin-top: 60px;
-  }
+.cv {
+	width: 645px;
+	margin: auto;
+	.button {
+		margin-top: 60px;
+	}
+
+	@media screen and (max-width: 768px) {
+    width: auto;
+	}
 }
