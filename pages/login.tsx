@@ -51,17 +51,17 @@ const Login: NextPage = () => {
 					<div className="content-wrap">
 						<section className="left">
 							<div className="left-inner">
-								<h1 className="head">Thank you for visiting</h1>
-								<p className="title">
+								<span className="head">Thank you for visiting</span>
+								<h1 className="title">
 									この度は、ご訪問頂きありがとうございます。
 									<br />
 									お知らせしました、ログイン情報でログインお願いいたします。
-								</p>
+								</h1>
 							</div>
 						</section>
 						<section className="right">
 							<div className="right-inner">
-								<h1>Login</h1>
+								<span className="head">Login</span>
 
 								<div className="form">
 									<div className="input">
