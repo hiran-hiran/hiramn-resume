@@ -6,7 +6,6 @@
 | 氏名     | 平田 望                                                            |
 | 生年月日 | 1990/05/23                                                         |
 | Github   | [https://github.com/aluco-hirata](https://github.com/aluco-hirata) |
-| Blog   | [https://hirata-tech-blog.vercel.app/](https://hirata-tech-blog.vercel.app/) |
 
 ## 保有スキル
 * HTML, CSS, SCSS
@@ -26,6 +25,10 @@
 フロントエンドの技術が好きですが、ゆくゆくはバックエンド(Node.js)も担当できるようになりたいと考えています。  
 また最近では、組織作りにも興味が出始め、所属する組織が少しでもいい方向に向かえば思い、定例MTG等の提案を行っております。
 
+#### 個人的に作成したもの
+* [https://hirata-tech-blog.vercel.app](https://hirata-tech-blog.vercel.app)ブログ[Next.js(SSG), MicroCMS]
+* [https://hirata-tech-blog.vercel.app](https://hirata-tech-blog.vercel.app)履歴書サイト[Next.js(SSG), TypeScript, Redux, MicroCMS, firebase(Authentication)]
+* [https://photo-gallery-d8be6.web.app](https://photo-gallery-d8be6.web.app)フォトギャラリー[React, Redux, firebase(Authentication, Firestore)]
 
 
 ## 2019/10 - 現在 : 株式会社Aluco
