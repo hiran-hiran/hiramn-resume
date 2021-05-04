@@ -5,7 +5,7 @@
 | -------- | ------------------------------------------------------------------ |
 | 氏名     | 平田 望                                                            |
 | 生年月日 | 1990/05/23                                                         |
-| Github   | [https://github.com/aluco-hirata](https://github.com/aluco-hirata) |
+| Github   | [https://github.com/hiran-hiran](https://github.com/hiran-hiran) |
 
 ## 保有スキル
 * HTML, CSS, SCSS
