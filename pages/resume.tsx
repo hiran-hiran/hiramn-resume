@@ -1,16 +1,25 @@
-import { NextPage, GetStaticProps } from "next";
-import Head from "next/head";
-import Link from "next/link";
+import { NextPage, GetStaticProps } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useCallback } from 'react';
 
-import Layout from "../src/components/Layout";
+import Layout from '../src/components/Layout';
 
 type Props = {
-	data: any
+	data: any;
 };
 
 const Resume: NextPage<Props> = ({ data }) => {
 	const d = data[0];
-	console.log(d);
+
+
+	const formatDate = useCallback((date) => {
+		const y = date.getFullYear();
+		var m = ('00' + (date.getMonth() + 1)).slice(-2);
+		var d = ('00' + date.getDate()).slice(-2);
+		return `${y}年 ${m}月 ${d}日`;
+  }, []);
+  const date = formatDate(new Date())
 
 	return (
 		<>
@@ -36,7 +45,7 @@ const Resume: NextPage<Props> = ({ data }) => {
 								<td></td>
 								<td></td>
 								<td></td>
-								<td className="date">2021年 2月 25日 現在</td>
+								<td className="date">{`${date} 現在`}</td>
 							</tr>
 							<tr className="row03">
 								<td className="bd-t-s bd-l-s"></td>
@@ -234,10 +243,10 @@ export default Resume;
 
 export const getStaticProps: GetStaticProps = async () => {
 	const key: {} = {
-		headers: { "X-API-KEY": process.env.API_KEY },
+		headers: { 'X-API-KEY': process.env.API_KEY },
 	};
 
-	const res = await fetch(process.env.END_POINT + "resume", key);
+	const res = await fetch(process.env.END_POINT + 'resume', key);
 	const data = await res.json();
 
 	return {
