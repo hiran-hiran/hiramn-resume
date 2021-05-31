@@ -12,22 +12,22 @@
 * JavaScript, jQuery
 * Wordpress
 * React
-* TypeScript（個人開発）
-* Next.js（個人開発）
+* TypeScript
+* Next.js
 * Node.js（個人開発）
 * Firebase（個人開発）
 
 
 
 ## 自己PR
-現職では、受託制作がメインで、ソース等は最終クライアントへ渡すので、見通しの良いコードを書くように心がけております。  
+現職では、受託制作メインでソース等は最終、クライアントへ渡すので、見通しの良いコードを書くように心がけております。  
 デザイナーとしての経験もあるので、エンジニアが見逃しがちな、UIの違和感等に気付けることが、強みだと考えております。  
-フロントエンドの技術が好きですが、ゆくゆくはバックエンド(Node.js)も担当できるようになりたいと考えています。  
+フロントエンドの技術が好きですが、バックエンド（Node.js）にも興味があり、ゆくゆくは全体の設計にも関わりたいと思っています。
 また最近では、組織作りにも興味が出始め、所属する組織が少しでもいい方向に向かえば思い、定例MTG等の提案を行っております。
 
 #### 個人的に作成したもの
 * [https://hirata-tech-blog.vercel.app](https://hirata-tech-blog.vercel.app)ブログ[Next.js(SSG), MicroCMS]
-* [https://hirata-tech-blog.vercel.app](https://hirata-tech-blog.vercel.app)履歴書サイト[Next.js(SSG), TypeScript, Redux, MicroCMS, firebase(Authentication)]
+* [https://hirtata-resume.vercel.app/](https://hirtata-resume.vercel.app/)履歴書サイト[Next.js(SSG), TypeScript, Redux, MicroCMS, firebase(Authentication)]
 * [https://photo-gallery-d8be6.web.app](https://photo-gallery-d8be6.web.app)フォトギャラリー[React, Redux, firebase(Authentication, Firestore)]
 
 
@@ -37,7 +37,7 @@
 * たまにデザイン
 
 コーダーとして、webサイトのマークアップ・wordpress構築等を行っております。  
-構造を意識したマークアップを心がけており、ecサイトの構築や、時々、デザインも行います。  
+構造を意識したマークアップを心がけており、ecサイトの構築や、時々、デザインも行います。
 チーム力・クオリティの向上を目指し、定例MTGを設けたり、コーディングテンプレートの策定を進めました。  
 結果として、MTGは習慣化し、曖昧だったコーディングルールも整い、人によるバラつきは軽減されました。
 
