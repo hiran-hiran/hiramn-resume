@@ -20,15 +20,17 @@
 
 
 ## 自己PR
-現職では、受託制作メインでソース等は最終、クライアントへ渡すので、見通しの良いコードを書くように心がけております。  
-デザイナーとしての経験もあるので、エンジニアが見逃しがちな、UIの違和感等に気付けることが、強みだと考えております。  
-フロントエンドの技術が好きですが、バックエンド（Node.js）にも興味があり、ゆくゆくは全体の設計にも関わりたいと思っています。
-また最近では、組織作りにも興味が出始め、所属する組織が少しでもいい方向に向かえば思い、定例MTG等の提案を行っております。
+文書構造を意識したマークアップを行い、見通しの良いコードを書くように心がけております。  
+デザイナーとしての経験もあるので、エンジニアが見逃しがちなUIの違和感等に気付けることが、自分の強みだと考えております。  
+フロントエンドの技術が好きですが、バックエンド（特にNode.js）にも興味があり、ゆくゆくは全体の設計にも関わりたいと思っています。  
+また最近では、チーム作りにも興味が出始め、所属する組織が少しでもいい方向に向かうよう、定例MTG等の提案し、実施したりしています。（1人で動いて解決できるのは些細なものだと気付きました。。。）  
+
+
+
 
 #### 個人的に作成したもの
 * [https://hirata-tech-blog.vercel.app](https://hirata-tech-blog.vercel.app)ブログ[Next.js(SSG), MicroCMS]
 * [https://hirtata-resume.vercel.app/](https://hirtata-resume.vercel.app/)履歴書サイト[Next.js(SSG), TypeScript, Redux, MicroCMS, firebase(Authentication)]
-* [https://photo-gallery-d8be6.web.app](https://photo-gallery-d8be6.web.app)フォトギャラリー[React, Redux, firebase(Authentication, Firestore)]
 
 
 ## 2019/10 - 現在 : 株式会社Aluco
@@ -36,16 +38,17 @@
 * マークアップ
 * たまにデザイン
 
-コーダーとして、webサイトのマークアップ・wordpress構築等を行っております。  
-構造を意識したマークアップを心がけており、ecサイトの構築や、時々、デザインも行います。
-チーム力・クオリティの向上を目指し、定例MTGを設けたり、コーディングテンプレートの策定を進めました。  
-結果として、MTGは習慣化し、曖昧だったコーディングルールも整い、人によるバラつきは軽減されました。
+主に、webサイトのマークアップ・wordpress構築等を行っております。  
+文書構造を意識したマークアップを心がけており、ecサイトの構築や、時々デザインも行います。  
+2021年4月は、知人の紹介で、Next.jsの開発案件に参画しました。  
+現在は、自社サイトのリニューアルを、Next.js（JAMstack）で行うために、デザインから構築まで一人で進めております。  
+
 
 
 #### 実績
-* [https://www.shop-orange.info/](https://www.shop-orange.info/)[コーディング・EC(futureshop)]
-* [https://wedding-central-public-hall.com/](https://wedding-central-public-hall.com/)[コーディング(wordpress)]
-* [https://scrw.jp/](https://scrw.jp/)[デザイン(ロゴ作成)・コーディング(react)]
+* [https://www.shop-orange.info/](https://www.shop-orange.info/)[マークアップ・EC(futureshop)]
+* [https://wedding-central-public-hall.com/](https://wedding-central-public-hall.com/)[マークアップ(wordpress)]
+* [https://scrw.jp/](https://scrw.jp/)[デザイン(ロゴ作成)・マークアップ(react)]
 
 
 
@@ -54,7 +57,7 @@
 * webサイトのデザイン
 * 保守・更新作業
 
-webデザイナーとして、webサイトのデザイン・ロゴ作成・更新業務等を行っておりました。
+webデザイナーとして、webサイトのデザイン・ロゴ作成・簡単なマークアップ等を行っておりました。
 
 #### 実績
 * [https://books.globis.co.jp/](https://books.globis.co.jp/)[デザイン]
@@ -111,4 +114,4 @@ webデザイナーとして、バナー制作を主に行っておりました�
 
 
 ## 社外プロジェクト
-個人的に依頼を受けることがあり、バナーデザイン・コーディング・Wordpress構築等をちょこちょこお手伝いしております。
+個人的に依頼を受けることがあり、バナーデザイン・マークアップ・Wordpress構築等をちょこちょこお手伝いしております。
