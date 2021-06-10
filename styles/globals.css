@@ -60,6 +60,10 @@ body {
 		display: block;
 		page-break-before: auto;
 	}
+
+	.resume .row02 td:nth-child(5) {
+		font-size: 80%;
+	}
 }
 
 @page {
