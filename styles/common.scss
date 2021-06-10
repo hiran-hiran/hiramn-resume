@@ -1,4 +1,5 @@
 .container {
+	position: relative;
 	padding: 80px 0;
 	@media screen and (max-width: 768px) {
 		padding: 30px 15px 80px;
@@ -40,9 +41,9 @@
 	}
 
 	.head {
-    display: block;
+		display: block;
 		font-size: 32px;
-    font-weight: bold;
+		font-weight: bold;
 		text-align: center;
 	}
 	.title {
@@ -62,7 +63,7 @@
 			padding: 20px;
 		}
 		p {
-		margin-top: 30px;
+			margin-top: 30px;
 		}
 	}
 }
@@ -103,7 +104,7 @@
 		}
 
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			top: 50%;
 			right: 1%;
@@ -114,7 +115,7 @@
 			border-right: 1px solid #ff416c;
 		}
 		&::before {
-			content: "";
+			content: '';
 			position: absolute;
 			bottom: 0;
 			left: 0;
@@ -225,4 +226,27 @@ body.isDark {
 	.markdown-body table tr {
 		background: transparent;
 	}
+}
+
+
+.prtin-btn-container{
+  max-width: 920px;
+  margin: 0 auto;
+}
+.prtin-btn {
+  position: absolute;
+  top:-120px;
+	display: block;
+	width: 150px;
+	padding: 12px;
+	border-radius: 20px;
+	border: 1px solid #ff416c;
+	background-color: #ff416c;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 1px;
+	transition: opacity 0.2s ease-in;
+	cursor: pointer;
 }

@@ -4,22 +4,24 @@ import Link from 'next/link';
 import { useCallback } from 'react';
 
 import Layout from '../src/components/Layout';
+import { useRef } from 'react';
+import PrintBtn from '../src/components/PrintBtn';
 
 type Props = {
 	data: any;
 };
 
 const Resume: NextPage<Props> = ({ data }) => {
+	const printRef = useRef(null);
 	const d = data[0];
-
 
 	const formatDate = useCallback((date) => {
 		const y = date.getFullYear();
 		var m = ('00' + (date.getMonth() + 1)).slice(-2);
 		var d = ('00' + date.getDate()).slice(-2);
 		return `${y}年 ${m}月 ${d}日`;
-  }, []);
-  const date = formatDate(new Date())
+	}, []);
+	const date = formatDate(new Date());
 
 	return (
 		<>
@@ -27,7 +29,8 @@ const Resume: NextPage<Props> = ({ data }) => {
 				<title>履歴書 | ヒラタの履歴書</title>
 			</Head>
 			<Layout>
-				<div className="resume">
+				<PrintBtn printRef={printRef} />
+				<div className="resume" ref={printRef}>
 					<table>
 						<thead>
 							<tr className="row01">
@@ -162,6 +165,7 @@ const Resume: NextPage<Props> = ({ data }) => {
 						</tbody>
 					</table>
 
+          <div className="page-break" />
 					<table>
 						<thead>
 							<tr className="row01">
@@ -231,7 +235,7 @@ const Resume: NextPage<Props> = ({ data }) => {
 					</table>
 
 					<Link href="/">
-						<a className="button">Back</a>
+						<a className="button print-none">Back</a>
 					</Link>
 				</div>
 			</Layout>
