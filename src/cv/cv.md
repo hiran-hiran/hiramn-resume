@@ -20,35 +20,35 @@
 
 
 ## 自己PR
-文書構造を意識したマークアップを行い、見通しの良いコードを書くように心がけております。  
-デザイナーとしての経験もあるので、エンジニアが見逃しがちなUIの違和感等に気付けることが、自分の強みだと考えております。  
-フロントエンドの技術が好きですが、バックエンド（特にNode.js）にも興味があり、ゆくゆくは全体の設計にも関わりたいと思っています。  
-また最近では、チーム作りにも興味が出始め、所属する組織が少しでもいい方向に向かうよう、定例MTG等の提案し、実施したりしています。（1人で動いて解決できるのは些細なものだと気付きました。。。）  
-
-
+文書構造を意識し、適切なタグでマークアップを行い、見通しの良いコードを書くように心がけています。  
+デザイナーとしての経験もあるので、エンジニアが見逃しがちなUIの違和感等に気付けることが、自分の強みだと考えています。  
+フロントエンドの技術が好きですが、サービスを作る上ではバックエンドの理解も必要なので、Node.jsやPrisma, GraphQLを勉強しており、ゆくゆくは全体の設計にも関わっていきたいと思っています。  
 
 
 #### 個人的に作成したもの
-* [https://hirata-tech-blog.vercel.app](https://hirata-tech-blog.vercel.app)ブログ[Next.js(SSG), MicroCMS]
 * [https://hirtata-resume.vercel.app/](https://hirtata-resume.vercel.app/)履歴書サイト[Next.js(SSG), TypeScript, Redux, MicroCMS, firebase(Authentication)]
+* [https://hirata-tech-blog.vercel.app](https://hirata-tech-blog.vercel.app)個人ブログ[Next.js(SSG), MicroCMS]
 
-
+---
 ## 2019/10 - 現在 : 株式会社Aluco
 #### 業務内容
 * マークアップ
+* WordPress, EC構築
 * たまにデザイン
 
-主に、webサイトのマークアップ・wordpress構築等を行っております。  
-文書構造を意識したマークアップを心がけており、ecサイトの構築や、時々デザインも行います。  
-2021年4月は、知人の紹介で、Next.jsの開発案件に参画しました。  
-現在は、自社サイトのリニューアルを、Next.js（JAMstack）で行うために、デザインから構築まで一人で進めております。  
+主に、webサイトのマークアップ・WordPress構築等を行っております。  
+文書構造を意識したマークアップを心がけており、時々デザインも行います。  
+2021年4月には知人の紹介で、Next.jsの開発案件に参画させていただき、そこでの経験が、よりフロントエンドエンジニアとして成長したいと思うきっかけになりました。  
+普段の案件では、モダンな技術を使える機会がほぼないので、自社サービスサイトをReactで書いてみたり、紹介で開発案件に参加してみたりと、自分で仕事を作りながらなんとか経験を積もうとあがいています。  
+最近は、自社サイトのリニューアルを、Next.js（JAMstack　バックエンドはWordPressのREST API）で行うために、デザインから構築まで一人で進めております。  
 
 
 
 #### 実績
-* [https://www.shop-orange.info/](https://www.shop-orange.info/)[マークアップ・EC(futureshop)]
-* [https://wedding-central-public-hall.com/](https://wedding-central-public-hall.com/)[マークアップ(wordpress)]
-* [https://scrw.jp/](https://scrw.jp/)[デザイン(ロゴ作成)・マークアップ(react)]
+* [https://scrw.jp/](https://scrw.jp/)[自社サービスサイト　デザイン(ロゴ作成)・フロント(React)]
+* [https://stg.aluco.jp/](https://stg.aluco.jp/)[自社サイト　デザイン・フロント(Next.js TypeScript)]
+* [https://wedding-central-public-hall.com/](https://wedding-central-public-hall.com/)[WordPress構築]
+* [https://www.shop-orange.info/](https://www.shop-orange.info/)[EC構築(futureshop)]
 
 
 
