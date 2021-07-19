@@ -6,9 +6,10 @@ import { useCallback } from 'react';
 import Layout from '../src/components/Layout';
 import { useRef } from 'react';
 import PrintBtn from '../src/components/PrintBtn';
+import Td from '../src/components/Td';
 
 type Props = {
-	data: any;
+	data: any[];
 };
 
 const Resume: NextPage<Props> = ({ data }) => {
@@ -34,203 +35,133 @@ const Resume: NextPage<Props> = ({ data }) => {
 					<table>
 						<thead>
 							<tr className="row01">
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
+								{[...Array(6)].map((i, el) => (
+									<th key={el} />
+								))}
 							</tr>
 						</thead>
 						<tbody>
 							<tr className="row02">
-								<td colSpan={2}>履 歴 書</td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td className="date">{`${date} 現在`}</td>
+								<Td cols={3}>履 歴 書</Td>
+								<Td cols={3} classes="date">{`${date} 現在`}</Td>
 							</tr>
-							<tr className="row03">
-								<td className="bd-t-s bd-l-s"></td>
-								<td colSpan={3} className="bd-t-s bd-l-s">
-									{d.basic.name_kana}
-								</td>
-								<td rowSpan={3} className="bd-t-s bd-l-dt center">
-									{d.basic.gender}
-								</td>
-								<td rowSpan={4} className="bd-t-s bd-r-s bd-l-s center img">
-									<img src={d.basic?.img.url} alt="" />
-								</td>
+              <tr className="row03">
+								<Td classes="bd-t-s bd-l-s" />
+								<Td cols={3} classes="bd-t-s bd-l-s">{d.basic.name_kana}</Td>
+								<Td rows={3} classes="bd-t-s bd-l-dt center">{d.basic.gender}</Td>
+								<Td rows={4} classes="bd-t-s bd-r-s bd-b-s bd-l-s center img"><img src={d.basic?.img.url} alt="" /></Td>
 							</tr>
 							<tr>
-								<td rowSpan={2} className="bd-t-dt bd-l-s">
-									氏 名
-								</td>
-								<td colSpan={3} rowSpan={2} className="bd-t-dt bd-l-s">
-									{d.basic.name}
-								</td>
+								<Td rows={2} classes="bd-t-dt bd-l-s">氏 名</Td>
+                <Td rows={2} cols={3} classes="bd-t-dt bd-l-s">{d.basic.name}</Td>
 							</tr>
-							<tr></tr>
-							<tr>
-								<td className="bd-t-s bd-l-s">生年月日</td>
-								<td colSpan={4} className="bd-t-s bd-l-s">
-									{d.basic.birth}
-								</td>
+							<tr />
+              <tr>
+								<Td classes="bd-t-dt bd-l-s">生年月日</Td>
+                <Td cols={4} classes="bd-t-dt bd-l-s">{d.basic.birth}</Td>
 							</tr>
-							<tr>
-								<td className="bd-t-s bd-l-s">フリガナ</td>
-								<td colSpan={5} className="bd-t-s bd-r-s bd-l-s">
-									{d.basic.address_kana}
-								</td>
+              <tr>
+                <Td classes="bd-t-dt bd-l-s">フリガナ</Td>
+                <Td cols={5} classes="bd-t-dt bd-r-s bd-l-s">{d.basic.address_kana}</Td>
 							</tr>
-							<tr>
-								<td className="bd-t-dt bd-l-s">住 所</td>
-								<td colSpan={5} className="bd-t-dt bd-r-s">
-									( 〒{d.basic.zip} )
-								</td>
+              <tr>
+                <Td classes="bd-t-dt bd-l-s">住 所</Td>
+                <Td cols={5} classes="bd-t-dt bd-r-s">{`( 〒${d.basic.zip} )`}</Td>
 							</tr>
-							<tr>
-								<td colSpan={6} rowSpan={2} className="bd-r-s bd-l-s">
-									{d.basic.address}
-								</td>
+              <tr>
+                <Td rows={2} cols={6} classes="bd-r-s bd-l-s">{ d.basic.address }</Td>
 							</tr>
-							<tr></tr>
-							<tr>
-								<td className="bd-t-s bd-l-s">電話</td>
-								<td colSpan={2} className="bd-t-s"></td>
-								<td className="bd-t-s bd-l-s">携帯電話</td>
-								<td colSpan={2} className="bd-t-s bd-r-s">
-									{d.basic.phone}
-								</td>
+							<tr />
+              <tr>
+                <Td classes="bd-t-s bd-l-s">電話</Td>
+                <Td cols={2} classes="bd-t-s" />
+                <Td classes="bd-t-s bd-l-s">携帯電話</Td>
+                <Td cols={2} classes="bd-t-s bd-r-s">{ d.basic.phone }</Td>
 							</tr>
-							<tr>
-								<td className="bd-t-s bd-l-s">E-mail</td>
-								<td colSpan={5} className="bd-t-s bd-r-s">
-									{d.basic.email}
-								</td>
+              <tr>
+                <Td classes="bd-t-s bd-l-s">E-mail</Td>
+                <Td cols={5} classes="bd-t-s bd-r-s">{d.basic.email}</Td>
 							</tr>
-							<tr>
-								<td className="bd-t-s bd-l-s center">年</td>
-								<td className="bd-t-s bd-l-dt center">月</td>
-								<td colSpan={4} className="bd-t-s bd-r-s bd-l-dt center">
-									学歴・職歴
-								</td>
+              <tr>
+                <Td classes="bd-t-s bd-l-s center">年</Td>
+                <Td classes="bd-t-s bd-l-s center">月</Td>
+                <Td cols={4} classes="bd-t-s bd-r-s bd-l-dt center">学歴・職歴</Td>
 							</tr>
-							<tr>
-								<td className="bd-t-db bd-l-s center"></td>
-								<td className="bd-t-db bd-l-dt center"></td>
-								<td colSpan={4} className="bd-t-db bd-r-s bd-l-dt center">
-									学歴
-								</td>
+              <tr>
+                <Td classes="bd-t-db bd-l-s center" />
+                <Td classes="bd-t-db bd-l-dt center" />
+                <Td cols={4} classes="bd-t-db bd-r-s bd-l-dt center">学歴</Td>
 							</tr>
 							{d.educational.map((el: any, id: string) => (
 								<tr key={id}>
-									<td className="bd-t-dt bd-l-s center">{el.year}</td>
-									<td className="bd-t-dt bd-l-dt center">{el.month}</td>
-									<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-										{el.school}
-									</td>
+									<Td classes="bd-t-dt bd-l-s center">{el.year}</Td>
+									<Td classes="bd-t-dt bd-l-dt center">{el.month}</Td>
+									<Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt">{el.school}</Td>
 								</tr>
 							))}
 							<tr>
-								<td className="bd-t-dt bd-l-s center"></td>
-								<td className="bd-t-dt bd-l-dt center"></td>
-								<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt center"></td>
+								<Td classes="bd-t-dt bd-l-s center" />
+								<Td classes="bd-t-dt bd-l-dt center" />
+								<Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt center"></Td>
 							</tr>
-
 							<tr>
-								<td className="bd-t-dt bd-l-s center"></td>
-								<td className="bd-t-dt bd-l-dt center"></td>
-								<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt center">
-									職歴
-								</td>
+                <Td classes="bd-t-dt bd-l-s center" />
+                <Td classes="bd-t-dt bd-l-dt center" />
+								<Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt center">職歴</Td>
 							</tr>
 							{d.work.map((el: any, id: string) => (
 								<tr key={id}>
-									<td className="bd-t-dt bd-l-s center">{el.year}</td>
-									<td className="bd-t-dt bd-l-dt center">{el.month}</td>
-									<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-										{el.school}
-									</td>
+									<Td classes="bd-t-dt bd-l-s center">{el.year}</Td>
+									<Td classes="bd-t-dt bd-l-dt center">{el.month}</Td>
+									<Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt">{el.school}</Td>
 								</tr>
 							))}
 							<tr>
-								<td className="bd-t-dt bd-b-s bd-l-s center"></td>
-								<td className="bd-t-dt bd-b-s bd-l-dt center"></td>
-								<td colSpan={4} className="bd-t-dt bd-r-s bd-b-s bd-l-dt">
-									現在に至る
-								</td>
-								<td></td>
+                <Td classes="bd-t-dt bd-l-s bd-b-s center" />
+                <Td classes="bd-t-dt bd-l-dt bd-b-s center" />
+								<Td cols={4} classes="bd-t-dt bd-r-s bd-b-s bd-l-dt">現在に至る</Td>
 							</tr>
 						</tbody>
 					</table>
 
-          <div className="page-break" />
+					<div className="page-break" />
 					<table>
 						<thead>
-							<tr className="row01">
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
+              <tr className="row01">
+								{[...Array(6)].map((i, el) => (
+									<th key={el} />
+								))}
 							</tr>
 						</thead>
 						<tbody>
-							<tr></tr>
+							<tr />
 							<tr>
-								<td className="bd-t-s bd-l-s center">年</td>
-								<td className="bd-t-s bd-l-dt center">月</td>
-								<td colSpan={4} className="bd-t-s bd-r-s bd-l-dt center">
-									免許・資格
-								</td>
+								<Td classes="bd-t-s bd-l-s center">年</Td>
+								<Td classes="bd-t-s bd-l-dt center">月</Td>
+								<Td cols={4} classes="bd-t-s bd-r-s bd-l-dt center">免許・資格</Td>
 							</tr>
 							{d.license.map((el: any, id: string) => (
 								<tr key={id}>
-									<td className="bd-t-dt bd-l-s center">{el.year}</td>
-									<td className="bd-t-dt bd-l-dt center">{el.month}</td>
-									<td colSpan={4} className="bd-t-dt bd-r-s bd-l-dt">
-										{el.school}
-									</td>
+									<Td classes="bd-t-dt bd-l-s center">{el.year}</Td>
+									<Td classes="bd-t-dt bd-l-dt center">{el.month}</Td>
+									<Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt">{el.school}</Td>
 								</tr>
 							))}
 
 							<tr>
-								<td colSpan={6} className="bd-t-s bd-r-s bd-l-s">
-									志望動機
-								</td>
+								<Td cols={6} classes="bd-t-s bd-r-s bd-l-s">志望動機</Td>
 							</tr>
 							<tr>
-								<td
-									colSpan={6}
-									rowSpan={5}
-									className="bd-t-s bd-r-s bd-b-s bd-l-s"
-									dangerouslySetInnerHTML={{ __html: `${d.reason}` }}
-								/>
+								<Td cols={6} rows={5} classes="bd-t-s bd-r-s bd-b-s bd-l-s" dangerouslyHTML={d.reason}/>
 							</tr>
-							<tr></tr>
-							<tr></tr>
-							<tr></tr>
-							<tr></tr>
-
-							<tr>
-								<td colSpan={6} className="bd-t-s bd-r-s bd-l-s">
-									本人希望記入欄
-								</td>
+							<tr /><tr /><tr /><tr />
+              <tr>
+								<Td cols={6} classes="bd-t-s bd-r-s bd-l-s">本人希望記入欄</Td>
 							</tr>
-							<tr>
-								<td
-									colSpan={6}
-									rowSpan={5}
-									className="bd-t-s bd-r-s bd-b-s bd-l-s"
-									dangerouslySetInnerHTML={{ __html: `${d.request}` }}
-								/>
-							</tr>
-							<tr></tr>
-							<tr></tr>
-							<tr></tr>
-							<tr></tr>
+              <tr>
+								<Td cols={6} rows={5} classes="bd-t-s bd-r-s bd-b-s bd-l-s" dangerouslyHTML={d.request}/>
+              </tr>
+							<tr /><tr /><tr /><tr />
 						</tbody>
 					</table>
 
