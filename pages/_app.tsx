@@ -28,17 +28,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-	return (
-		<>
-			<Head>
-				<title>ヒラタの履歴書</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<Provider store={store}>
-				<Component {...pageProps} />
-			</Provider>
-		</>
-	);
+  return (
+    <>
+      <Head>
+        <title>ヒラタの履歴書</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </>
+  );
 }
 
 export default MyApp;
