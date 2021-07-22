@@ -39,14 +39,14 @@
 主に、webサイトのマークアップ・WordPress構築等を行っております。  
 文書構造を意識したマークアップを心がけており、時々デザインも行います。  
 2021年4月には知人の紹介で、Next.jsの開発案件に参画させていただき、そこでの経験が、よりフロントエンドエンジニアとして成長したいと思うきっかけになりました。  
-普段の案件では、モダンな技術を使える機会がほぼないので、自社サービスサイトをReactで書いてみたり、紹介で開発案件に参加してみたりと、自分で仕事を作りながらなんとか経験を積もうとあがいています。  
-最近は、自社サイトのリニューアルを、Next.js（JAMstack　バックエンドはWordPressのREST API）で行うために、デザインから構築まで一人で進めております。  
+普段の案件では、モダンな技術を使える機会がほぼないので、自社サービスサイトをReactで書いてみたり、紹介で開発案件に参加してみたりと、経験を積むために自分で仕事を作るような動きをしています。  
+最近では、自社サイトのリニューアルを、Next.js（JAMstackーバックエンドはWordPressのREST API）で行うために、デザインから構築まで一人で進め、公開しました。  
 
 
 
 #### 実績
 * [https://scrw.jp/](https://scrw.jp/)[自社サービスサイト　デザイン(ロゴ作成)・フロント(React)]
-* [https://stg.aluco.jp/](https://stg.aluco.jp/)[自社サイト　デザイン・フロント(Next.js TypeScript)]
+* [https://aluco.jp/](https://aluco.jp/)[自社サイト　デザイン・フロント(Next.js TypeScript)]
 * [https://wedding-central-public-hall.com/](https://wedding-central-public-hall.com/)[WordPress構築]
 * [https://www.shop-orange.info/](https://www.shop-orange.info/)[EC構築(futureshop)]
 
