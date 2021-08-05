@@ -1,4 +1,4 @@
-import React, { useEffect, FC } from "react";
+import React, { useEffect, FC, useLayoutEffect } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../firebase/firebase";
@@ -16,7 +16,7 @@ const Layout: FC<Props> = ({ children }) => {
   const themeState = useSelector(selectTheme);
   
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (!userState) {
 			auth.onAuthStateChanged((authUser) => {
 				if (authUser) {
@@ -32,6 +32,7 @@ const Layout: FC<Props> = ({ children }) => {
   const handleClick = () => {
     dispatch(isDark())
   }
+
   useEffect(() => {
     if (themeState) {
       document.querySelector("body")?.classList.add("isDark")

@@ -27,7 +27,7 @@ const Cv: NextPage<Props> = ({ cv }) => {
         <PrintBtn printRef={printRef} />
         <div className="cv" ref={printRef}>
           <div className="markdown-body">
-            <ReactMarkdown plugins={[gfm]} source={cv} linkTarget={'_blank'} />
+            <ReactMarkdown plugins={[gfm]} children={cv} linkTarget={'_blank'} />
           </div>
           <Link href="/">
             <a className="button print-none">Back</a>
