@@ -1,10 +1,10 @@
 # 職務経歴書
 
 ## 基本情報
-|          |                                                                    |
-| -------- | ------------------------------------------------------------------ |
-| 氏名     | 平田 望                                                            |
-| 生年月日 | 1990/05/23                                                         |
+|          |                                                                  |
+| -------- | ---------------------------------------------------------------- |
+| 氏名     | 平田 望                                                          |
+| 生年月日 | 1990/05/23                                                       |
 | Github   | [https://github.com/hiran-hiran](https://github.com/hiran-hiran) |
 
 ## 保有スキル
@@ -45,10 +45,11 @@
 
 
 #### 実績
-* [https://scrw.jp/](https://scrw.jp/)[自社サービスサイト　デザイン(ロゴ作成)・フロント(React)]
 * [https://aluco.jp/](https://aluco.jp/)[自社サイト　デザイン・フロント(Next.js TypeScript)]
+* [https://scrw.jp/](https://scrw.jp/)[自社サービスサイト　デザイン(ロゴ作成)・フロント(React)]
 * [https://wedding-central-public-hall.com/](https://wedding-central-public-hall.com/)[WordPress構築]
 * [https://www.shop-orange.info/](https://www.shop-orange.info/)[EC構築(futureshop)]
+* [歯医者予約システム開発 フロント担当(Next.js TypeScript Rails)]
 
 
 
