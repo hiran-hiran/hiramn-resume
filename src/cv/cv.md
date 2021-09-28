@@ -30,7 +30,12 @@
 * [https://hirata-tech-blog.vercel.app](https://hirata-tech-blog.vercel.app)個人ブログ[Next.js(SSG), MicroCMS]
 
 ---
-## 2019/10 - 現在 : 株式会社Aluco
+## 2021/10 - 現在 : 株式会社JOINT CREW
+#### 業務内容
+* フロントエンド開発
+
+
+## 2019/10 - 2021/9 : 株式会社Aluco
 #### 業務内容
 * マークアップ
 * WordPress, EC構築
