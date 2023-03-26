@@ -1,45 +1,33 @@
-import { NextPage } from 'next';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-
-import React, { useState, useEffect } from 'react';
-import { login, logout } from '../src/features/userSlice';
-import { useDispatch } from 'react-redux';
-import { auth } from '../firebase/firebase';
-import TextInput from '../src/components/TextInput';
-import Layout from '../src/components/Layout';
+import { NextPage } from "next";
+import Head from "next/head";
+import { useState } from "react";
+import TextInput from "@/components/TextInput";
+import Layout from "@/components/Layout";
+import { useRouter } from "next/router";
 
 const Login: NextPage = () => {
-  const dispatch = useDispatch();
+  const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
   const router = useRouter();
 
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const signIn = async () => {
+    const res = await fetch("/api/signin", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
 
-  const logIn = async () => {
-    try {
-      const result = await auth.signInWithEmailAndPassword(email, password);
-      const user = result.user;
-      if (user) {
-        dispatch(login(user.uid));
-      }
-    } catch (err) {
-      alert('認証に失敗しました');
-      console.log(err.message, 'エラー');
+    const data = await res.json();
+    if (data.login) {
+      router.push("/");
     }
   };
-
-  useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        dispatch(login(authUser.uid));
-        router.push('/');
-      } else {
-        dispatch(logout());
-        router.push('/login');
-      }
-    });
-  }, []);
 
   return (
     <>
@@ -82,7 +70,7 @@ const Login: NextPage = () => {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
-                  <button className="button" type="button" onClick={logIn}>
+                  <button className="button" type="button" onClick={signIn}>
                     Login
                   </button>
                 </div>
