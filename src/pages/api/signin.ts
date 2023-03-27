@@ -14,7 +14,7 @@ const handler: NextApiHandler = async (req, res) => {
     res.status(403).json(error);
   }
 
-  res.status(200).json({ login: true });
+  res.status(200).json(data.session);
 };
 
 export default handler;

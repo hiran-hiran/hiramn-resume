@@ -13,18 +13,6 @@ const Login: NextPage = () => {
   const client = useSupabaseClient();
 
   const signIn = async () => {
-    // const res = await fetch("/api/signin", {
-    //   method: "POST",
-    //   headers: {
-    //     accept: "application/json",
-    //     "Content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     email,
-    //     password,
-    //   }),
-    // });
-
     const { data } = await client.auth.signInWithPassword({
       email: email!,
       password: password!,
@@ -76,7 +64,7 @@ const Login: NextPage = () => {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
-                  <button className="button" type="button" onClick={signIn}>
+                  <button className="button" onClick={signIn}>
                     Login
                   </button>
                 </div>
