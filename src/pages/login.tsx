@@ -4,27 +4,33 @@ import { useState } from "react";
 import TextInput from "@/components/TextInput";
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const Login: NextPage = () => {
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
   const router = useRouter();
+  const client = useSupabaseClient();
 
   const signIn = async () => {
-    const res = await fetch("/api/signin", {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
+    // const res = await fetch("/api/signin", {
+    //   method: "POST",
+    //   headers: {
+    //     accept: "application/json",
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     email,
+    //     password,
+    //   }),
+    // });
+
+    const { data } = await client.auth.signInWithPassword({
+      email: email!,
+      password: password!,
     });
 
-    const data = await res.json();
-    if (data.login) {
+    if (data.user) {
       router.push("/");
     }
   };

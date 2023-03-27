@@ -20,7 +20,7 @@ const Home = () => {
     return "Loading...";
   }
 
-  if (!session.isLoading && !session.session) {
+  if (!session.session) {
     router.push("/login");
   }
 
