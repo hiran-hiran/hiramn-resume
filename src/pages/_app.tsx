@@ -11,13 +11,14 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 import { useEffect } from "react";
+import { ThemeContext } from "@/contexts/ThemeContext";
 
 function MyApp({
   Component,
   pageProps,
 }: AppProps<{ initialSession: Session }>) {
   const [supabaseClient] = useState(() => createBrowserSupabaseClient());
-
+  const [isDark, setIsDark] = useState(false);
   // const router = useRouter();
   // const handleRouteChange = (path: string) => {
   //   gtag.pageview(path);
@@ -42,7 +43,9 @@ function MyApp({
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        <Component {...pageProps} />
+        <ThemeContext.Provider value={{ isDark, setIsDark }}>
+          <Component {...pageProps} />
+        </ThemeContext.Provider>
       </SessionContextProvider>{" "}
     </>
   );
