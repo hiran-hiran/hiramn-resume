@@ -2,21 +2,19 @@ import Head from "next/head";
 import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 
-import fs from "fs";
 import Layout from "@/components/Layout";
-import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
 import "github-markdown-css";
 import { useRef } from "react";
 import PrintBtn from "@/components/PrintBtn";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
+import { Career, getCareer } from "@/lib/newt";
 
 type Props = {
-  cv: string;
+  cv: Career;
 };
 
-const Cv: NextPage<Props> = ({ cv }) => {
+const Career: NextPage<Props> = ({ cv }) => {
   const router = useRouter();
   const session = useSessionContext();
   const printRef = useRef(null);
@@ -37,13 +35,10 @@ const Cv: NextPage<Props> = ({ cv }) => {
       <Layout>
         <PrintBtn printRef={printRef} />
         <div className="cv" ref={printRef}>
-          <div className="markdown-body">
-            <ReactMarkdown
-              plugins={[gfm]}
-              children={cv}
-              linkTarget={"_blank"}
-            />
-          </div>
+          <div
+            className="markdown-body"
+            dangerouslySetInnerHTML={{ __html: cv.career }}
+          />
           <Link href="/" className="button print-none">
             Back
           </Link>
@@ -53,10 +48,11 @@ const Cv: NextPage<Props> = ({ cv }) => {
   );
 };
 
-export default Cv;
+export default Career;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const cv = fs.readFileSync(process.cwd() + "/src/cv/cv.md", "utf8");
+  const cv = await getCareer();
+
   return {
     props: {
       cv,

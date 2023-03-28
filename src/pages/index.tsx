@@ -51,7 +51,7 @@ const Home = () => {
                   <Link href="/resume" className="link">
                     履歴書はこちら
                   </Link>
-                  <Link href="/cv" className="link">
+                  <Link href="/career" className="link">
                     職務経歴書はこちら
                   </Link>
                 </div>
