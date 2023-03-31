@@ -9,17 +9,16 @@ import Td from "@/components/Td";
 import Layout from "@/components/Layout";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
+import { getResume } from "@/lib/newt";
 
 type Props = {
-  data: any[];
+  resume: any;
 };
 
-const Resume: NextPage<Props> = ({ data }) => {
+const Resume: NextPage<Props> = ({ resume }) => {
   const router = useRouter();
   const session = useSessionContext();
-
   const printRef = useRef(null);
-  const d = data[0];
 
   const formatDate = useCallback((date) => {
     const y = date.getFullYear();
@@ -48,7 +47,7 @@ const Resume: NextPage<Props> = ({ data }) => {
           <table>
             <thead>
               <tr className="row01">
-                {[...Array(6)].map((i, el) => (
+                {[...Array(6)].map((_, el) => (
                   <th key={el} />
                 ))}
               </tr>
@@ -61,13 +60,13 @@ const Resume: NextPage<Props> = ({ data }) => {
               <tr className="row03">
                 <Td classes="bd-t-s bd-l-s" />
                 <Td cols={3} classes="bd-t-s bd-l-s">
-                  {d.basic.name_kana}
+                  {resume.basic.name_kana}
                 </Td>
                 <Td rows={3} classes="bd-t-s bd-l-dt center">
-                  {d.basic.gender}
+                  {resume.basic.gender}
                 </Td>
                 <Td rows={4} classes="bd-t-s bd-r-s bd-b-s bd-l-s center img">
-                  <img src={d.basic?.img.url} alt="" />
+                  <img src={resume.basic?.image.src} alt="" />
                 </Td>
               </tr>
               <tr>
@@ -75,32 +74,32 @@ const Resume: NextPage<Props> = ({ data }) => {
                   氏 名
                 </Td>
                 <Td rows={2} cols={3} classes="bd-t-dt bd-l-s">
-                  {d.basic.name}
+                  {resume.basic.name}
                 </Td>
               </tr>
               <tr />
               <tr>
                 <Td classes="bd-t-dt bd-l-s">生年月日</Td>
                 <Td cols={4} classes="bd-t-dt bd-l-s">
-                  {d.basic.birth}
+                  {resume.basic.birth}
                 </Td>
               </tr>
               <tr>
                 <Td classes="bd-t-dt bd-l-s">フリガナ</Td>
                 <Td cols={5} classes="bd-t-dt bd-r-s bd-l-s">
-                  {d.basic.address_kana}
+                  {resume.basic.address_kana}
                 </Td>
               </tr>
               <tr>
-                <Td classes="bd-t-dt bd-l-s">住 所</Td>
+                <Td classes="bd-t-dt bd-r-s bd-l-s">住 所</Td>
                 <Td
                   cols={5}
                   classes="bd-t-dt bd-r-s"
-                >{`( 〒${d.basic.zip} )`}</Td>
+                >{`( 〒${resume.basic.zip} )`}</Td>
               </tr>
               <tr>
-                <Td rows={2} cols={6} classes="bd-r-s bd-l-s">
-                  {d.basic.address}
+                <Td rows={2} cols={6} classes="bd-r-s bd-t-dt bd-l-s">
+                  {resume.basic.address}
                 </Td>
               </tr>
               <tr />
@@ -109,13 +108,13 @@ const Resume: NextPage<Props> = ({ data }) => {
                 <Td cols={2} classes="bd-t-s" />
                 <Td classes="bd-t-s bd-l-s">携帯電話</Td>
                 <Td cols={2} classes="bd-t-s bd-r-s">
-                  {d.basic.phone}
+                  {resume.basic.phone}
                 </Td>
               </tr>
               <tr>
-                <Td classes="bd-t-s bd-l-s">E-mail</Td>
+                <Td classes="bd-t-s bd-r-s bd-l-s">E-mail</Td>
                 <Td cols={5} classes="bd-t-s bd-r-s">
-                  {d.basic.email}
+                  {resume.basic.email}
                 </Td>
               </tr>
               <tr>
@@ -132,12 +131,12 @@ const Resume: NextPage<Props> = ({ data }) => {
                   学歴
                 </Td>
               </tr>
-              {d.educational.map((el: any, id: string) => (
-                <tr key={id}>
-                  <Td classes="bd-t-dt bd-l-s center">{el.year}</Td>
-                  <Td classes="bd-t-dt bd-l-dt center">{el.month}</Td>
+              {resume.educational.map((val: any) => (
+                <tr key={val._id}>
+                  <Td classes="bd-t-dt bd-l-s center">{val.data.year}</Td>
+                  <Td classes="bd-t-dt bd-l-dt center">{val.data.month}</Td>
                   <Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt">
-                    {el.school}
+                    {val.data.school}
                   </Td>
                 </tr>
               ))}
@@ -153,21 +152,21 @@ const Resume: NextPage<Props> = ({ data }) => {
                   職歴
                 </Td>
               </tr>
-              {d.work.map((el: any, id: string) => (
-                <tr key={id}>
-                  <Td classes="bd-t-dt bd-l-s center">{el.year}</Td>
-                  <Td classes="bd-t-dt bd-l-dt center">{el.month}</Td>
+              {resume.career.map((val: any) => (
+                <tr key={val._id}>
+                  <Td classes="bd-t-dt bd-l-s center">{val.data.year}</Td>
+                  <Td classes="bd-t-dt bd-l-dt center">{val.data.month}</Td>
                   <Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt">
-                    {el.school}
+                    {val.data.school}
                   </Td>
                 </tr>
               ))}
               <tr>
                 <Td classes="bd-t-dt bd-l-s bd-b-s center" />
                 <Td classes="bd-t-dt bd-l-dt bd-b-s center" />
-                <Td cols={4} classes="bd-t-dt bd-r-s bd-b-s bd-l-dt">
-                  現在に至る
-                </Td>
+                <Td cols={4} classes="bd-t-dt bd-r-s bd-b-s bd-l-dt" />
+                {/* 現在に至る */}
+                {/* </Td> */}
               </tr>
             </tbody>
           </table>
@@ -190,12 +189,12 @@ const Resume: NextPage<Props> = ({ data }) => {
                   免許・資格
                 </Td>
               </tr>
-              {d.license.map((el: any, id: string) => (
-                <tr key={id}>
-                  <Td classes="bd-t-dt bd-l-s center">{el.year}</Td>
-                  <Td classes="bd-t-dt bd-l-dt center">{el.month}</Td>
+              {resume.license.map((val: any) => (
+                <tr key={val._id}>
+                  <Td classes="bd-t-dt bd-l-s center">{val.data.year}</Td>
+                  <Td classes="bd-t-dt bd-l-dt center">{val.data.month}</Td>
                   <Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt">
-                    {el.school}
+                    {val.data.school}
                   </Td>
                 </tr>
               ))}
@@ -210,7 +209,7 @@ const Resume: NextPage<Props> = ({ data }) => {
                   cols={6}
                   rows={5}
                   classes="bd-t-s bd-r-s bd-b-s bd-l-s"
-                  dangerouslyHTML={d.reason}
+                  dangerouslyHTML={resume.reason}
                 />
               </tr>
               <tr />
@@ -227,7 +226,7 @@ const Resume: NextPage<Props> = ({ data }) => {
                   cols={6}
                   rows={5}
                   classes="bd-t-s bd-r-s bd-b-s bd-l-s"
-                  dangerouslyHTML={d.request}
+                  dangerouslyHTML={resume.request}
                 />
               </tr>
               <tr />
@@ -249,16 +248,11 @@ const Resume: NextPage<Props> = ({ data }) => {
 export default Resume;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const key: {} = {
-    headers: { "X-API-KEY": process.env.API_KEY },
-  };
-
-  const res = await fetch(process.env.END_POINT + "resume", key);
-  const data = await res.json();
+  const resume = await getResume();
 
   return {
     props: {
-      data: data.contents,
+      resume,
     },
   };
 };

@@ -19,3 +19,11 @@ export const getCareer = async (): Promise<Career> => {
     contentId: "6422f7ba337c0de26e101909",
   });
 };
+
+export const getResume = async (): Promise<Career> => {
+  return await client.getContent({
+    appUid: "resume-site",
+    modelUid: "resume",
+    contentId: "6425acf886e7de37b829ac7a",
+  });
+};
