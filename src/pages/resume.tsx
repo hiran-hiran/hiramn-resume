@@ -20,7 +20,7 @@ const Resume: NextPage<Props> = ({ resume }) => {
   const session = useSessionContext();
   const printRef = useRef(null);
 
-  const formatDate = useCallback((date) => {
+  const formatDate = useCallback((date: Date) => {
     const y = date.getFullYear();
     var m = ("00" + (date.getMonth() + 1)).slice(-2);
     var d = ("00" + date.getDate()).slice(-2);
