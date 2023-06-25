@@ -6,8 +6,8 @@ import Layout from "@/components/Layout";
 import "github-markdown-css";
 import { useRef } from "react";
 import PrintBtn from "@/components/PrintBtn";
-import { useSessionContext } from "@supabase/auth-helpers-react";
-import { useRouter } from "next/router";
+// import { useSessionContext } from "@supabase/auth-helpers-react";
+// import { useRouter } from "next/router";
 import { Career, getCareer } from "@/lib/newt";
 
 type Props = {
@@ -15,17 +15,17 @@ type Props = {
 };
 
 const Career: NextPage<Props> = ({ cv }) => {
-  const router = useRouter();
-  const session = useSessionContext();
+  // const router = useRouter();
+  // const session = useSessionContext();
   const printRef = useRef(null);
 
-  if (session.isLoading) {
-    return <p>Loading...</p>;
-  }
+  // if (session.isLoading) {
+  //   return <p>Loading...</p>;
+  // }
 
-  if (!session.session) {
-    router.push("/login");
-  }
+  // if (!session.session) {
+  //   router.push("/login");
+  // }
 
   return (
     <>
