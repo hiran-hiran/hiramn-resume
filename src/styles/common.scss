@@ -199,6 +199,12 @@
   }
 }
 
+.markdown-body {
+  a {
+    display: inline-block;
+  }
+}
+
 body.isDark {
   background-color: #131d2c;
   color: #fff;
