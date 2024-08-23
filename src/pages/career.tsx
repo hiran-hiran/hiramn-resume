@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { NextPage, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Link from "next/link";
 
 import Layout from "@/components/Layout";
@@ -14,7 +14,7 @@ type Props = {
   cv: Career;
 };
 
-const Career: NextPage<Props> = ({ cv }) => {
+export default function Page({ cv }: Props) {
   // const router = useRouter();
   // const session = useSessionContext();
   const printRef = useRef(null);
@@ -46,9 +46,7 @@ const Career: NextPage<Props> = ({ cv }) => {
       </Layout>
     </>
   );
-};
-
-export default Career;
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   const cv = await getCareer();

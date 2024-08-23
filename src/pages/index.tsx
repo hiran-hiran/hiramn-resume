@@ -7,7 +7,7 @@ import {
 } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 
-const Home = () => {
+export default function Page() {
   const router = useRouter();
   const client = useSupabaseClient();
   const session = useSessionContext();
@@ -62,6 +62,4 @@ const Home = () => {
       </div>
     </>
   );
-};
-
-export default Home;
+}

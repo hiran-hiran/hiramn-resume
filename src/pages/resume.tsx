@@ -1,4 +1,4 @@
-import { NextPage, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useCallback } from "react";
@@ -15,7 +15,7 @@ type Props = {
   resume: any;
 };
 
-const Resume: NextPage<Props> = ({ resume }) => {
+export default function Page({ resume }: Props) {
   const router = useRouter();
   const session = useSessionContext();
   const printRef = useRef(null);
@@ -243,9 +243,7 @@ const Resume: NextPage<Props> = ({ resume }) => {
       </Layout>
     </>
   );
-};
-
-export default Resume;
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   const resume = await getResume();

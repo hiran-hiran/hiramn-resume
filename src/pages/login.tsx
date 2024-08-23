@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
 import TextInput from "@/components/TextInput";
@@ -6,7 +5,7 @@ import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-const Login: NextPage = () => {
+export default function Page() {
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
   const router = useRouter();
@@ -75,6 +74,4 @@ const Login: NextPage = () => {
       </Layout>
     </>
   );
-};
-
-export default Login;
+}
