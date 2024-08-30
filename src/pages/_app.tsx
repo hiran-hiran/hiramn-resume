@@ -18,7 +18,7 @@ function MyApp({
   pageProps,
 }: AppProps<{ initialSession: Session }>) {
   const [supabaseClient] = useState(() => createPagesBrowserClient());
-  const [isDark, setIsDark] = useState(false);
+  // const [isDark, setIsDark] = useState(false);
   // const router = useRouter();
   // const handleRouteChange = (path: string) => {
   //   gtag.pageview(path);
@@ -43,10 +43,10 @@ function MyApp({
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        <ThemeContext.Provider value={{ isDark, setIsDark }}>
-          <Component {...pageProps} />
-        </ThemeContext.Provider>
-      </SessionContextProvider>{" "}
+        {/* <ThemeContext.Provider value={{ isDark, setIsDark }}> */}
+        <Component {...pageProps} />
+        {/* </ThemeContext.Provider> */}
+      </SessionContextProvider>
     </>
   );
 }
