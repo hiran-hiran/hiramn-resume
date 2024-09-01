@@ -4,14 +4,12 @@ const STORAGE_KEY = "theme";
 const theme = { light: "light", dark: "dark" } as const;
 
 export const useThemeLocalStorage = () => {
-  const theme = useSyncExternalStore(subscribe, getSnapshot);
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   return { theme, setTheme };
 };
 
 const subscribe = (callback: () => void) => {
-  console.log(callback);
-
   window.addEventListener("storage", callback);
 
   return () => window.removeEventListener("storage", callback);
@@ -19,6 +17,10 @@ const subscribe = (callback: () => void) => {
 
 const getSnapshot = () => {
   return window.localStorage.getItem(STORAGE_KEY);
+};
+
+const getServerSnapshot = () => {
+  return null;
 };
 
 const setTheme = (val: keyof typeof theme) => {
