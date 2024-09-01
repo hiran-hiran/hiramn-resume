@@ -1,19 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "@/components/Layout";
-import {
-  useSessionContext,
-  useSupabaseClient,
-} from "@supabase/auth-helpers-react";
+import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
+import { supabaseClient } from "@/lib/supabaseClient";
 
 export default function Page() {
   const router = useRouter();
-  const client = useSupabaseClient();
   const session = useSessionContext();
 
   const handleLogout = async () => {
-    await client.auth.signOut();
+    await supabaseClient.auth.signOut();
   };
 
   if (session.isLoading) {

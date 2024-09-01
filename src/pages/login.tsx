@@ -3,16 +3,15 @@ import { useState } from "react";
 import TextInput from "@/components/TextInput";
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { supabaseClient } from "@/lib/supabaseClient";
 
 export default function Page() {
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
   const router = useRouter();
-  const client = useSupabaseClient();
 
   const signIn = async () => {
-    const { data } = await client.auth.signInWithPassword({
+    const { data } = await supabaseClient.auth.signInWithPassword({
       email: email!,
       password: password!,
     });

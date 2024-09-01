@@ -4,21 +4,14 @@ import "@/styles/globals.css";
 import "@/styles/common.scss";
 import "@/styles/resume.scss";
 import "@/styles/cv.scss";
-import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider, Session } from "@supabase/auth-helpers-react";
-import { useState } from "react";
-
-// import { useRouter } from "next/router";
+import { supabaseClient } from "@/lib/supabaseClient";
 // import * as gtag from "../lib/gtag";
-// import { useEffect } from "react";
-import { ThemeContext } from "@/contexts/ThemeContext";
 
 function MyApp({
   Component,
   pageProps,
 }: AppProps<{ initialSession: Session }>) {
-  const [supabaseClient] = useState(() => createPagesBrowserClient());
-  // const [isDark, setIsDark] = useState(false);
   // const router = useRouter();
   // const handleRouteChange = (path: string) => {
   //   gtag.pageview(path);
@@ -43,9 +36,7 @@ function MyApp({
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        {/* <ThemeContext.Provider value={{ isDark, setIsDark }}> */}
         <Component {...pageProps} />
-        {/* </ThemeContext.Provider> */}
       </SessionContextProvider>
     </>
   );
