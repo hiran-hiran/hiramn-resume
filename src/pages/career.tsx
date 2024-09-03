@@ -2,7 +2,7 @@ import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
-import Layout from "@/components/Layout";
+import { Layout } from "@/components/Layout";
 import "github-markdown-css";
 import PrintBtn from "@/components/PrintBtn";
 // import { useSessionContext } from "@supabase/auth-helpers-react";

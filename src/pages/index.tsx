@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import { Layout } from "@/components/Layout";
 import { supabaseClient } from "@/lib/supabaseClient";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 import Head from "next/head";

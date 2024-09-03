@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useCallback } from "react";
 
-import Layout from "@/components/Layout";
+import { Layout } from "@/components/Layout";
 import PrintBtn from "@/components/PrintBtn";
 import Td from "@/components/Td";
 import { getResume } from "@/lib/newt";
