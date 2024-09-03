@@ -1,9 +1,9 @@
-import Head from "next/head";
-import { useState } from "react";
-import TextInput from "@/components/TextInput";
 import Layout from "@/components/Layout";
-import { useRouter } from "next/router";
+import TextInput from "@/components/TextInput";
 import { supabaseClient } from "@/lib/supabaseClient";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Page() {
   const [email, setEmail] = useState<string>();
@@ -12,7 +12,9 @@ export default function Page() {
 
   const signIn = async () => {
     const { data } = await supabaseClient.auth.signInWithPassword({
+      // biome-ignore lint/style/noNonNullAssertion: <explanation>
       email: email!,
+      // biome-ignore lint/style/noNonNullAssertion: <explanation>
       password: password!,
     });
 
@@ -62,7 +64,7 @@ export default function Page() {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
-                  <button className="button" onClick={signIn}>
+                  <button type="button" className="button" onClick={signIn}>
                     Login
                   </button>
                 </div>

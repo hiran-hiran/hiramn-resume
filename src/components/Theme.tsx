@@ -12,6 +12,7 @@ export const Theme = () => {
 
   return (
     <div className="theme-btn-container">
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
       <div
         onClick={handleClick}
         className={`theme-btn-wrap ${theme === "dark" ? "isDark" : ""}`}

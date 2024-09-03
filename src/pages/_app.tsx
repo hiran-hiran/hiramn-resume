@@ -1,11 +1,14 @@
+import type { AppProps } from "next/app";
 import Head from "next/head";
-import { AppProps } from "next/app";
 import "@/styles/globals.css";
+import { supabaseClient } from "@/lib/supabaseClient";
 import "@/styles/common.scss";
 import "@/styles/resume.scss";
 import "@/styles/cv.scss";
-import { SessionContextProvider, Session } from "@supabase/auth-helpers-react";
-import { supabaseClient } from "@/lib/supabaseClient";
+import {
+  type Session,
+  SessionContextProvider,
+} from "@supabase/auth-helpers-react";
 // import * as gtag from "../lib/gtag";
 
 function MyApp({

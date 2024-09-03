@@ -1,17 +1,18 @@
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useCallback } from "react";
 
-import { useRef } from "react";
+import Layout from "@/components/Layout";
 import PrintBtn from "@/components/PrintBtn";
 import Td from "@/components/Td";
-import Layout from "@/components/Layout";
+import { getResume } from "@/lib/newt";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import { getResume } from "@/lib/newt";
+import { useRef } from "react";
 
 type Props = {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   resume: any;
 };
 
@@ -22,8 +23,10 @@ export default function Page({ resume }: Props) {
 
   const formatDate = useCallback((date: Date) => {
     const y = date.getFullYear();
-    var m = ("00" + (date.getMonth() + 1)).slice(-2);
-    var d = ("00" + date.getDate()).slice(-2);
+    // biome-ignore lint/style/useTemplate: <explanation>
+    const m = ("00" + (date.getMonth() + 1)).slice(-2);
+    // biome-ignore lint/style/useTemplate: <explanation>
+    const d = ("00" + date.getDate()).slice(-2);
     return `${y}年 ${m}月 ${d}日`;
   }, []);
   const date = formatDate(new Date());
@@ -48,6 +51,7 @@ export default function Page({ resume }: Props) {
             <thead>
               <tr className="row01">
                 {[...Array(6)].map((_, el) => (
+                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                   <th key={el} />
                 ))}
               </tr>
@@ -131,6 +135,7 @@ export default function Page({ resume }: Props) {
                   学歴
                 </Td>
               </tr>
+              {/* biome-ignore lint/suspicious/noExplicitAny: <explanation> */}
               {resume.educational.map((val: any) => (
                 <tr key={val._id}>
                   <Td classes="bd-t-dt bd-l-s center">{val.data.year}</Td>
@@ -143,7 +148,7 @@ export default function Page({ resume }: Props) {
               <tr>
                 <Td classes="bd-t-dt bd-l-s center" />
                 <Td classes="bd-t-dt bd-l-dt center" />
-                <Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt center"></Td>
+                <Td cols={4} classes="bd-t-dt bd-r-s bd-l-dt center" />
               </tr>
               <tr>
                 <Td classes="bd-t-dt bd-l-s center" />
@@ -152,6 +157,7 @@ export default function Page({ resume }: Props) {
                   職歴
                 </Td>
               </tr>
+              {/* biome-ignore lint/suspicious/noExplicitAny: <explanation> */}
               {resume.career.map((val: any) => (
                 <tr key={val._id}>
                   <Td classes="bd-t-dt bd-l-s center">{val.data.year}</Td>
@@ -176,6 +182,7 @@ export default function Page({ resume }: Props) {
             <thead>
               <tr className="row01">
                 {[...Array(6)].map((i, el) => (
+                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                   <th key={el} />
                 ))}
               </tr>
@@ -189,6 +196,7 @@ export default function Page({ resume }: Props) {
                   免許・資格
                 </Td>
               </tr>
+              {/* biome-ignore lint/suspicious/noExplicitAny: <explanation> */}
               {resume.license.map((val: any) => (
                 <tr key={val._id}>
                   <Td classes="bd-t-dt bd-l-s center">{val.data.year}</Td>

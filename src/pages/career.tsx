@@ -1,14 +1,14 @@
+import type { GetStaticProps } from "next";
 import Head from "next/head";
-import { GetStaticProps } from "next";
 import Link from "next/link";
 
 import Layout from "@/components/Layout";
 import "github-markdown-css";
-import { useRef } from "react";
 import PrintBtn from "@/components/PrintBtn";
 // import { useSessionContext } from "@supabase/auth-helpers-react";
 // import { useRouter } from "next/router";
-import { Career, getCareer } from "@/lib/newt";
+import { type Career, getCareer } from "@/lib/newt";
+import { useRef } from "react";
 
 type Props = {
   cv: Career;
@@ -37,6 +37,7 @@ export default function Page({ cv }: Props) {
         <div className="cv" ref={printRef}>
           <div
             className="markdown-body"
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
             dangerouslySetInnerHTML={{ __html: cv.career }}
           />
           <Link href="/" className="button print-none">

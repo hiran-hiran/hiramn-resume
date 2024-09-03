@@ -1,13 +1,13 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
 import { GA_ID } from "@/lib/gtag";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
-  render() {
-    return (
-      <Html lang="ja">
-        <Head>
-          {/* Google Analytics */}
-          {/* {GA_ID && (
+	render() {
+		return (
+			<Html lang="ja">
+				<Head>
+					{/* Google Analytics */}
+					{/* {GA_ID && (
             <>
               <script
                 async
@@ -26,12 +26,12 @@ export default class MyDocument extends Document {
               />
             </>
           )} */}
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+				</Head>
+				<body>
+					<Main />
+					<NextScript />
+				</body>
+			</Html>
+		);
+	}
 }

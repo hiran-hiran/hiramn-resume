@@ -1,22 +1,26 @@
-import React, { RefObject, VFC } from 'react';
-import { useReactToPrint } from 'react-to-print';
+import type { RefObject } from "react";
+import { useReactToPrint } from "react-to-print";
 
 type Props = {
-	printRef: RefObject<HTMLElement>;
+  printRef: RefObject<HTMLElement>;
 };
 
-const PrintBtn: VFC<Props> = (props) => {
-	const handlePrint = useReactToPrint({
-		content: () => props.printRef.current,
-	});
+const PrintBtn = (props: Props) => {
+  const handlePrint = useReactToPrint({
+    content: () => props.printRef.current,
+  });
 
-	return (
-		<div className="prtin-btn-container">
-			<button className="prtin-btn print-none" onClick={handlePrint}>
-				Print
-			</button>
-		</div>
-	);
+  return (
+    <div className="prtin-btn-container">
+      <button
+        type="button"
+        className="prtin-btn print-none"
+        onClick={handlePrint}
+      >
+        Print
+      </button>
+    </div>
+  );
 };
 
 export default PrintBtn;

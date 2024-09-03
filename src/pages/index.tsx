@@ -1,9 +1,9 @@
+import Layout from "@/components/Layout";
+import { supabaseClient } from "@/lib/supabaseClient";
+import { useSessionContext } from "@supabase/auth-helpers-react";
 import Head from "next/head";
 import Link from "next/link";
-import Layout from "@/components/Layout";
-import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import { supabaseClient } from "@/lib/supabaseClient";
 
 export default function Page() {
   const router = useRouter();
@@ -36,7 +36,11 @@ export default function Page() {
                 <h1 className="title">
                   こちらでは、私の履歴書と職務経歴書がご確認いただけます。
                 </h1>
-                <button className="button button-white" onClick={handleLogout}>
+                <button
+                  type="button"
+                  className="button button-white"
+                  onClick={handleLogout}
+                >
                   Logout
                 </button>
               </div>
