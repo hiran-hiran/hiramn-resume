@@ -1,4 +1,8 @@
 import type { ReactNode } from "react";
+import "@/styles/globals.css";
+import "@/styles/common.scss";
+import "@/styles/resume.scss";
+import "@/styles/cv.scss";
 
 export const metadata = {
   title: "Next.js",
