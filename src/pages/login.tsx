@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import { Layout } from "@/components/Layout";
 import TextInput from "@/components/TextInput";
 import { supabaseClient } from "@/lib/supabaseClient";
 import Head from "next/head";
