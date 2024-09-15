@@ -46,9 +46,8 @@ export default function Resume({ resume }: Props) {
         <table>
           <thead>
             <tr className="row01">
-              {[...Array(6)].map((_, el) => (
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                <th key={el} />
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <th key={i} />
               ))}
             </tr>
           </thead>
@@ -177,9 +176,8 @@ export default function Resume({ resume }: Props) {
         <table>
           <thead>
             <tr className="row01">
-              {[...Array(6)].map((i, el) => (
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                <th key={el} />
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <th key={i} />
               ))}
             </tr>
           </thead>
