@@ -6,7 +6,6 @@ import { useCallback } from "react";
 import { Layout } from "@/components/Layout";
 import PrintBtn from "@/components/PrintBtn";
 import Td from "@/components/Td";
-import { getResume } from "@/lib/newt";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";

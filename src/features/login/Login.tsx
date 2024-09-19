@@ -1,8 +1,8 @@
 "use client";
+
 import { Layout } from "@/components/Layout";
 import TextInput from "@/components/TextInput";
-import { supabaseClient } from "@/lib/supabaseClient";
-import Head from "next/head";
+import { supabaseBrowserClient } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -12,11 +12,13 @@ export default function Login() {
   const router = useRouter();
 
   const signIn = async () => {
-    const { data } = await supabaseClient.auth.signInWithPassword({
-      // biome-ignore lint/style/noNonNullAssertion: <explanation>
-      email: email!,
-      // biome-ignore lint/style/noNonNullAssertion: <explanation>
-      password: password!,
+    if (!email || !password) {
+      return;
+    }
+
+    const { data } = await supabaseBrowserClient.auth.signInWithPassword({
+      email,
+      password,
     });
 
     if (data.user) {
