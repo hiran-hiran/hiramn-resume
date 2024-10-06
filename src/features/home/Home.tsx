@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/Layout";
-import { supabaseBrowserClient } from "@/lib/supabaseClient";
+import { supabaseBrowserClient } from "@/shared/lib/supabaseClient";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

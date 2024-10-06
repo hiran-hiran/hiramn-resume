@@ -1,5 +1,5 @@
 import Resume from "@/features/resume/Resume";
-import { getResume } from "@/lib/newt";
+import { getResume } from "@/shared/lib/newt";
 import type { Metadata } from "next";
 
 export const dynamic = "force-static";

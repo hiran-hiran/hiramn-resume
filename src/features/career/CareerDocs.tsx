@@ -5,7 +5,7 @@ import { Layout } from "@/components/Layout";
 import PrintBtn from "@/components/PrintBtn";
 // import { useSessionContext } from "@supabase/auth-helpers-react";
 // import { useRouter } from "next/router";
-import type { Career } from "@/lib/newt";
+import type { Career } from "@/shared/lib/newt";
 import { useRef } from "react";
 import "github-markdown-css";
 

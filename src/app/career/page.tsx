@@ -1,4 +1,4 @@
-import { getCareer } from "@/lib/newt";
+import { getCareer } from "@/shared/lib/newt";
 import type { Metadata } from "next";
 import CareerDocs from "@/features/career/CareerDocs";
 
