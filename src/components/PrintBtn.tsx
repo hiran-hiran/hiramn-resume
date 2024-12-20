@@ -7,7 +7,7 @@ type Props = {
 
 const PrintBtn = (props: Props) => {
   const handlePrint = useReactToPrint({
-    content: () => props.printRef.current,
+    contentRef: props.printRef,
   });
 
   return (
@@ -15,7 +15,7 @@ const PrintBtn = (props: Props) => {
       <button
         type="button"
         className="prtin-btn print-none"
-        onClick={handlePrint}
+        onClick={() => handlePrint()}
       >
         Print
       </button>
