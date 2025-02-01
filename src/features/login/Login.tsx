@@ -2,7 +2,7 @@
 
 import { Layout } from "@/components/Layout";
 import TextInput from "@/components/TextInput";
-import { supabaseBrowserClient } from "@/shared/lib/supabaseClient";
+import { supabaseBrowserClient } from "@/shared/lib/supabaseBrowserClient";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
