@@ -1,6 +1,6 @@
-import { getCareer } from "@/shared/lib/newt";
 import type { Metadata } from "next";
 import CareerDocs from "@/features/career/CareerDocs";
+import { client } from "@/shared/lib/hono";
 
 export const dynamic = "force-static";
 
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const cv = await getCareer();
+  const res = await client.api.career.$get();
+  const cv = await res.json();
 
-  return <CareerDocs cv={cv} />;
+  return <CareerDocs cv={cv.result} />;
 }
