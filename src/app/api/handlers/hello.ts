@@ -1,9 +1,9 @@
-import { createHandlers } from "@/shared/lib/hono";
+import { Hono } from "hono";
 
-export const helloHandler = createHandlers(async (c) => {
-  console.log("--------------", { c });
-
+const app = new Hono().get("/", async (c) => {
   return c.json({
     message: "Hello Next.js!",
   });
 });
+
+export default app;

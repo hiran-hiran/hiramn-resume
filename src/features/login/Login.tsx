@@ -2,6 +2,7 @@
 
 import { Layout } from "@/components/Layout";
 import TextInput from "@/components/TextInput";
+import { client } from "@/shared/lib/hono";
 import { supabaseBrowserClient } from "@/shared/lib/supabaseBrowserClient";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -16,14 +17,24 @@ export default function Login() {
       return;
     }
 
-    const { data } = await supabaseBrowserClient.auth.signInWithPassword({
-      email,
-      password,
+    const res = await client.api.login.$post({
+      json: {
+        email,
+        password,
+      },
     });
+    const data = await res.json();
 
-    if (data.user) {
-      router.push("/");
-    }
+    console.log({ data });
+
+    // const { data } = await supabaseBrowserClient.auth.signInWithPassword({
+    //   email,
+    //   password,
+    // });
+
+    // if (data.user) {
+    //   router.push("/");
+    // }
   };
 
   return (
