@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CareerDocs from "@/features/career/CareerDocs";
 import { client } from "@/shared/lib/hono";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "職務経歴書 | ヒラタの履歴書",
