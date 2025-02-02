@@ -1,3 +1,4 @@
+"use client";
 import { useThemeLocalStorage } from "@/shared/hooks/useThemeLocalStorage";
 
 export const Theme = () => {

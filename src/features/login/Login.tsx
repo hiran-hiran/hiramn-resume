@@ -3,7 +3,6 @@
 import { Layout } from "@/components/Layout";
 import TextInput from "@/components/TextInput";
 import { client } from "@/shared/lib/hono";
-import { supabaseBrowserClient } from "@/shared/lib/supabaseBrowserClient";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -23,18 +22,9 @@ export default function Login() {
         password,
       },
     });
-    const data = await res.json();
-
-    console.log({ data });
-
-    // const { data } = await supabaseBrowserClient.auth.signInWithPassword({
-    //   email,
-    //   password,
-    // });
-
-    // if (data.user) {
-    //   router.push("/");
-    // }
+    if (res.ok) {
+      router.push("/");
+    }
   };
 
   return (
