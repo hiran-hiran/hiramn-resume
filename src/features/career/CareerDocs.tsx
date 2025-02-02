@@ -8,15 +8,18 @@ import PrintBtn from "@/components/PrintBtn";
 import type { Career } from "@/shared/lib/newt";
 import { useRef } from "react";
 import "github-markdown-css";
+import { useReactToPrint } from "react-to-print";
 
 type Props = {
-  cv: Career;
+  // cv: Career;
+  cv: string;
 };
 
 export default function CareerDocs(props: Props) {
   // const router = useRouter();
   // const session = useSessionContext();
-  const printRef = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const handlePrint = useReactToPrint({ contentRef });
 
   // if (session.isLoading) {
   //   return <p>Loading...</p>;
@@ -28,12 +31,12 @@ export default function CareerDocs(props: Props) {
 
   return (
     <Layout>
-      <PrintBtn printRef={printRef} />
-      <div className="cv" ref={printRef}>
+      <PrintBtn onClick={handlePrint} />
+      <div className="cv" ref={contentRef}>
         <div
           className="markdown-body"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-          dangerouslySetInnerHTML={{ __html: props.cv.career }}
+          dangerouslySetInnerHTML={{ __html: props.cv }}
         />
         <Link href="/" className="button print-none">
           Back

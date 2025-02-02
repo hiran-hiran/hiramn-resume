@@ -9,6 +9,7 @@ import Td from "@/components/Td";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
 type Props = {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -18,7 +19,8 @@ type Props = {
 export default function Resume({ resume }: Props) {
   const router = useRouter();
   const session = useSessionContext();
-  const printRef = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const handlePrint = useReactToPrint({ contentRef });
 
   const formatDate = useCallback((date: Date) => {
     const y = date.getFullYear();
@@ -40,8 +42,8 @@ export default function Resume({ resume }: Props) {
 
   return (
     <Layout>
-      <PrintBtn printRef={printRef} />
-      <div className="resume" ref={printRef}>
+      <PrintBtn onClick={handlePrint} />
+      <div className="resume" ref={contentRef}>
         <table>
           <thead>
             <tr className="row01">
