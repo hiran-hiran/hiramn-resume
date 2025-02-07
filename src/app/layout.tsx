@@ -3,8 +3,6 @@ import "@/styles/globals.css";
 import "@/styles/common.scss";
 import "@/styles/resume.scss";
 import "@/styles/cv.scss";
-// import { SessionContextProvider } from "@supabase/auth-helpers-react";
-// import { supabaseBrowserClient } from "@/lib/supabaseClient";
 
 export const metadata = {
   title: "Next.js",
@@ -17,10 +15,6 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    // <SessionContextProvider
-    //   supabaseClient={supabaseBrowserClient}
-    // initialSession={pageProps.initialSession}
-    // >
     <html lang="ja">
       <body>{children}</body>
     </html>

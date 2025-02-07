@@ -16,7 +16,7 @@ export default function Login() {
       return;
     }
 
-    const res = await client.api.login.$post({
+    const res = await client.api.auth.login.$post({
       json: {
         email,
         password,

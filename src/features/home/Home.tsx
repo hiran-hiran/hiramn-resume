@@ -1,21 +1,18 @@
+"use client";
+
 import { Layout } from "@/components/Layout";
+import { client } from "@/shared/lib/hono";
 import Link from "next/link";
-// import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  // const router = useRouter();
+  const handleLogout = async () => {
+    const res = await client.api.auth.logout.$get();
 
-  // const handleLogout = async () => {
-  //   await browserClient.auth.signOut();
-  // };
-
-  //   if (session.isLoading) {
-  //     return "Loading...";
-  //   }
-
-  //   if (!session.session) {
-  //     router.push("/login");
-  //   }
+    if (res.ok) {
+      redirect("/login");
+    }
+  };
 
   return (
     <div className="p-top">
@@ -30,7 +27,7 @@ export default function Home() {
               <button
                 type="button"
                 className="button button-white"
-                // onClick={handleLogout}
+                onClick={handleLogout}
               >
                 Logout
               </button>
