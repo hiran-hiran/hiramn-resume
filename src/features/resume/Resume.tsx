@@ -6,8 +6,6 @@ import { useCallback } from "react";
 import { Layout } from "@/components/Layout";
 import PrintBtn from "@/components/PrintBtn";
 import Td from "@/components/Td";
-import { useSessionContext } from "@supabase/auth-helpers-react";
-import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
@@ -17,8 +15,6 @@ type Props = {
 };
 
 export default function Resume({ resume }: Props) {
-  const router = useRouter();
-  const session = useSessionContext();
   const contentRef = useRef<HTMLDivElement>(null);
   const handlePrint = useReactToPrint({ contentRef });
 
@@ -31,14 +27,6 @@ export default function Resume({ resume }: Props) {
     return `${y}年 ${m}月 ${d}日`;
   }, []);
   const date = formatDate(new Date());
-
-  if (session.isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (!session.session) {
-    router.push("/login");
-  }
 
   return (
     <Layout>
