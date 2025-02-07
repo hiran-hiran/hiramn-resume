@@ -9,10 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const res = await client.api.career.$get();
-
+  const res = await client.api.docs.career.$get();
   const cv = await res.text();
-  // const content = JSON.parse(cv);
 
   return <CareerDocs cv={cv} />;
 }

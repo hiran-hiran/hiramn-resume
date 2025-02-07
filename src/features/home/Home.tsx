@@ -37,9 +37,9 @@ export default function Home() {
           <div className="right">
             <div className="right-inner">
               <div className="link">
-                {/* <Link href="/resume" className="link">
+                <Link href="/resume" className="link">
                   履歴書はこちら
-                </Link> */}
+                </Link>
                 <Link href="/career" className="link">
                   職務経歴書はこちら
                 </Link>

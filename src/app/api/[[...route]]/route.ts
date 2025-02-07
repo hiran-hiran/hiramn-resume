@@ -1,15 +1,11 @@
 import { Hono } from "hono";
 import { handle } from "hono/vercel";
-import helloHandler from "../handlers/hello";
-import careerHandler from "../handlers/career";
+import docsHandler from "../handlers/docs";
 import authHandler from "../handlers/auth";
 
 const app = new Hono().basePath("/api");
 
-const routes = app
-  .route("/hello", helloHandler)
-  .route("/career", careerHandler)
-  .route("/auth", authHandler);
+const routes = app.route("/docs", docsHandler).route("/auth", authHandler);
 
 export type AppType = typeof routes;
 export const GET = handle(app);

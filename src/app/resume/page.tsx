@@ -1,5 +1,5 @@
 import Resume from "@/features/resume/Resume";
-import { getResume } from "@/shared/lib/newt";
+import { client } from "@/shared/lib/hono";
 import type { Metadata } from "next";
 
 export const dynamic = "force-static";
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const resume = await getResume();
+  const res = await client.api.docs.resume.$get();
+  const resume = await res.json();
 
-  return <Resume resume={resume} />;
+  return <Resume resume={resume.result} />;
 }
