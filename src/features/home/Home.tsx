@@ -1,37 +1,29 @@
 "use client";
 
 import { Layout } from "@/components/Layout";
-import { client } from "@/shared/lib/hono";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { useLogout } from "./hooks";
+import { Button } from "@/components/Button";
+import { useActionState } from "react";
 
 export default function Home() {
-  const handleLogout = async () => {
-    const res = await client.api.auth.logout.$get();
-
-    if (res.ok) {
-      redirect("/login");
-    }
-  };
+  const { handleLogout } = useLogout();
+  const [_, formAction, isPending] = useActionState(handleLogout, null);
 
   return (
     <div className="p-top">
       <Layout>
         <div className="content-wrap">
           <div className="left">
-            <div className="left-inner">
+            <form className="left-inner" action={formAction}>
               <span className="head">Welcome!</span>
               <h1 className="title">
                 こちらでは、私の履歴書と職務経歴書がご確認いただけます。
               </h1>
-              <button
-                type="button"
-                className="button button-white"
-                onClick={handleLogout}
-              >
+              <Button type="submit" variant="secondary" loading={isPending}>
                 Logout
-              </button>
-            </div>
+              </Button>
+            </form>
           </div>
 
           <div className="right">

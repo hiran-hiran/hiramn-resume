@@ -2,30 +2,19 @@
 
 import { Layout } from "@/components/Layout";
 import TextInput from "@/components/TextInput";
-import { client } from "@/shared/lib/hono";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useActionState, useState } from "react";
+import { useLogin } from "./hooks";
+import { Button } from "@/components/Button";
 
 export default function Login() {
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
-  const router = useRouter();
+  const { handleLogin } = useLogin();
 
-  const signIn = async () => {
-    if (!email || !password) {
-      return;
-    }
-
-    const res = await client.api.auth.login.$post({
-      json: {
-        email,
-        password,
-      },
-    });
-    if (res.ok) {
-      router.push("/");
-    }
-  };
+  const [_, formAction, isPending] = useActionState(
+    () => handleLogin({ email, password }),
+    null
+  );
 
   return (
     <Layout>
@@ -45,7 +34,7 @@ export default function Login() {
             <div className="right-inner">
               <span className="head">Login</span>
 
-              <div className="form">
+              <form className="form" action={formAction}>
                 <div className="input">
                   <TextInput
                     id="email"
@@ -64,10 +53,10 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <button type="button" className="button" onClick={signIn}>
+                <Button type="submit" loading={isPending}>
                   Login
-                </button>
-              </div>
+                </Button>
+              </form>
             </div>
           </section>
         </div>
