@@ -4,26 +4,28 @@ import { Layout } from "@/components/Layout";
 import Link from "next/link";
 import { useLogout } from "./hooks";
 import { Button } from "@/components/Button";
-import { useActionState } from "react";
 
 export default function Home() {
-  const { handleLogout } = useLogout();
-  const [_, formAction, isPending] = useActionState(handleLogout, null);
+  const { isPending, handleLogout } = useLogout();
 
   return (
     <div className="p-top">
       <Layout>
         <div className="content-wrap">
           <div className="left">
-            <form className="left-inner" action={formAction}>
+            <div className="left-inner">
               <span className="head">Welcome!</span>
               <h1 className="title">
                 こちらでは、私の履歴書と職務経歴書がご確認いただけます。
               </h1>
-              <Button type="submit" variant="secondary" loading={isPending}>
+              <Button
+                variant="secondary"
+                loading={isPending}
+                onClick={handleLogout}
+              >
                 Logout
               </Button>
-            </form>
+            </div>
           </div>
 
           <div className="right">
