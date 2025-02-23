@@ -1,3 +1,6 @@
+import { clsx } from "clsx";
+import styles from "./styles.module.scss";
+
 type Props = {
   type?: "button" | "submit";
   loading?: boolean;
@@ -16,7 +19,10 @@ export const Button = ({
   return (
     <button
       type={type}
-      className={variant === "secondary" ? "button button-white" : "button"}
+      className={clsx(
+        styles.button,
+        variant === "secondary" && styles.button__white
+      )}
       onClick={onClick}
     >
       {!loading ? children : "Loading..."}
