@@ -1,5 +1,4 @@
 import { clsx } from "clsx";
-import styles from "./styles.module.scss";
 
 type Props = {
   type?: "button" | "submit";
@@ -20,8 +19,8 @@ export const Button = ({
     <button
       type={type}
       className={clsx(
-        styles.button,
-        variant === "secondary" && styles.button__white
+        "block w-[140] cursor-pointer rounded-4xl bg-primary p-3 text-center font-bold text-white transition-opacity duration-200 ease-in hover:opacity-80",
+        variant === "secondary" && "!text-primary bg-white"
       )}
       onClick={onClick}
     >

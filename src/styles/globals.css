@@ -1,21 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Noto+Sans+JP&display=swap');
-/* html, */
-body {
-	margin: 0;
-	font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+@import "tailwindcss";
+
+@theme {
+	--color-primary: #ff416c;
+	--color-tahiti: #3ab7bf;
+	--color-bermuda: #78dcca;
 }
 
 a {
 	display: block;
-	color: inherit;
 	text-decoration: none;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
 }
 
 @media print {
@@ -24,12 +17,6 @@ a {
 		margin: 0;
 		box-shadow: 0;
 	}
-}
-html {
-	font-size: 62.5%;
-}
-body {
-	font-size: 1.3rem;
 }
 
 @media all {

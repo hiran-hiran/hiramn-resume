@@ -1,9 +1,8 @@
 "use client";
-
-import Link from "next/link";
 import { useCallback } from "react";
 
 import { Layout } from "@/components/Layout";
+import { LinkButton } from "@/components/LinkButton";
 import PrintBtn from "@/components/PrintBtn";
 import Td from "@/components/Td";
 import { useRef } from "react";
@@ -227,9 +226,9 @@ export default function Resume({ resume }: Props) {
           </tbody>
         </table>
 
-        <Link href="/" className="button print-none">
-          Back
-        </Link>
+        <div className="mt-10 flex justify-center">
+          <LinkButton href="/">Back</LinkButton>
+        </div>
       </div>
     </Layout>
   );

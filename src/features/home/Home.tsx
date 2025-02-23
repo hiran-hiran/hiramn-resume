@@ -1,9 +1,9 @@
 "use client";
 
+import { Button } from "@/components/Button";
 import { Layout } from "@/components/Layout";
 import Link from "next/link";
 import { useLogout } from "./hooks";
-import { Button } from "@/components/Button";
 
 export default function Home() {
   const { isPending, handleLogout } = useLogout();
@@ -13,23 +13,25 @@ export default function Home() {
       <Layout>
         <div className="content-wrap">
           <div className="left">
-            <div className="left-inner">
+            <div className="w-full">
               <span className="head">Welcome!</span>
               <h1 className="title">
                 こちらでは、私の履歴書と職務経歴書がご確認いただけます。
               </h1>
-              <Button
-                variant="secondary"
-                loading={isPending}
-                onClick={handleLogout}
-              >
-                Logout
-              </Button>
+              <div className="mt-8 flex justify-center">
+                <Button
+                  variant="secondary"
+                  loading={isPending}
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Button>
+              </div>
             </div>
           </div>
 
           <div className="right">
-            <div className="right-inner">
+            <div className="w-full">
               <div className="link">
                 <Link href="/resume" className="link">
                   履歴書はこちら

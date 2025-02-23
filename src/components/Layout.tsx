@@ -9,7 +9,7 @@ export const Layout = ({ children }: Props) => {
   return (
     <>
       <Theme />
-      <div className="container">{children}</div>
+      <div className="relative py-20 max-md:px-4 max-md:py-7">{children}</div>
     </>
   );
 };

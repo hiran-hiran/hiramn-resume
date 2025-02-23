@@ -1,10 +1,10 @@
 "use client";
 
+import { Button } from "@/components/Button";
 import { Layout } from "@/components/Layout";
 import TextInput from "@/components/TextInput";
 import { useActionState, useState } from "react";
 import { useLogin } from "./hooks";
-import { Button } from "@/components/Button";
 
 export default function Login() {
   const [email, setEmail] = useState<string>();
@@ -21,7 +21,7 @@ export default function Login() {
       <section className="p-login">
         <div className="content-wrap">
           <section className="left">
-            <div className="left-inner">
+            <div className="w-full">
               <span className="head">Thank you for visiting</span>
               <h1 className="title">
                 この度は、ご訪問頂きありがとうございます。
@@ -31,7 +31,7 @@ export default function Login() {
             </div>
           </section>
           <section className="right">
-            <div className="right-inner">
+            <div className="w-full">
               <span className="head">Login</span>
 
               <form className="form" action={formAction}>
@@ -53,9 +53,11 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <Button type="submit" loading={isPending}>
-                  Login
-                </Button>
+                <div className="flex justify-center">
+                  <Button type="submit" loading={isPending}>
+                    Login
+                  </Button>
+                </div>
               </form>
             </div>
           </section>
