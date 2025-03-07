@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { handle } from "hono/vercel";
-import docsHandler from "../handlers/docs";
 import authHandler from "../handlers/auth";
+import docsHandler from "../handlers/docs";
 
 const app = new Hono().basePath("/api");
 

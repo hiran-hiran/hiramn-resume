@@ -31,7 +31,7 @@ export default function Resume({ resume }: Props) {
     <Layout>
       <PrintBtn onClick={handlePrint} />
       <div className="resume" ref={contentRef}>
-        <table>
+        <table className="mx-auto table-fixed border-collapse">
           <thead>
             <tr className="row01">
               {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -161,7 +161,7 @@ export default function Resume({ resume }: Props) {
         </table>
 
         <div className="page-break" />
-        <table>
+        <table className="mx-auto table-fixed border-collapse">
           <thead>
             <tr className="row01">
               {[1, 2, 3, 4, 5, 6].map((i) => (

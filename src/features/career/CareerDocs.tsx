@@ -17,7 +17,7 @@ export default function CareerDocs(props: Props) {
   return (
     <Layout>
       <PrintBtn onClick={handlePrint} />
-      <div className="cv" ref={contentRef}>
+      <div className="mx-auto max-w-[645] max-md:w-auto" ref={contentRef}>
         <div
           className="markdown-body"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
