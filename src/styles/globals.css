@@ -1,59 +1,64 @@
 @import "tailwindcss";
 
 @theme {
-	--color-primary: #ff416c;
-	--color-tahiti: #3ab7bf;
-	--color-bermuda: #78dcca;
+  /* すべてのテーマの設定を無効化 */
+  /* --*: initial; */
+  --color-\*: initial;
+  --color-white: #fff;
+  --color-primary: #ff416c;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+  --color-gray-100: #f2f2f2;
 }
 
 a {
-	display: block;
-	text-decoration: none;
+  display: block;
+  text-decoration: none;
 }
 
 @media print {
-	body,
-	page {
-		margin: 0;
-		box-shadow: 0;
-	}
+  body,
+  page {
+    margin: 0;
+    box-shadow: 0;
+  }
 }
 
 @media all {
-	.page-break {
-		display: none;
-	}
+  .page-break {
+    display: none;
+  }
 }
 
 @media print {
-	html,
-	body {
-		height: initial !important;
-		overflow: initial !important;
-		-webkit-print-color-adjust: exact;
-	}
+  html,
+  body {
+    height: initial !important;
+    overflow: initial !important;
+    -webkit-print-color-adjust: exact;
+  }
 
-	.print-none {
-		display: none !important;
-	}
+  .print-none {
+    display: none !important;
+  }
 
-	.cv,
-	.resume {
-		width: 100%;
-	}
+  .cv,
+  .resume {
+    width: 100%;
+  }
 
-	.page-break {
-		margin-top: 1rem;
-		display: block;
-		page-break-before: auto;
-	}
+  .page-break {
+    margin-top: 1rem;
+    display: block;
+    page-break-before: auto;
+  }
 
-	.resume .row02 td:nth-child(5) {
-		font-size: 80%;
-	}
+  .resume .row02 td:nth-child(5) {
+    font-size: 80%;
+  }
 }
 
 @page {
-	size: auto;
-	margin: 10mm;
+  size: auto;
+  margin: 10mm;
 }

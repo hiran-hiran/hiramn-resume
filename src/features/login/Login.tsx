@@ -22,8 +22,10 @@ export default function Login() {
         <div className="content-wrap">
           <section className="left">
             <div className="w-full">
-              <span className="head">Thank you for visiting</span>
-              <h1 className="title">
+              <p className="text-center font-bold text-3xl">
+                Thank you for visiting
+              </p>
+              <h1 className="mt-10 text-sm">
                 この度は、ご訪問頂きありがとうございます。
                 <br />
                 お知らせしました、ログイン情報でログインお願いいたします。
@@ -32,27 +34,21 @@ export default function Login() {
           </section>
           <section className="right">
             <div className="w-full">
-              <span className="head">Login</span>
+              <p className="text-center font-bold text-3xl">Login</p>
 
-              <form className="form" action={formAction}>
-                <div className="input">
-                  <TextInput
-                    id="email"
-                    className="auth-input"
-                    type="email"
-                    placeholder="メールアドレス"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="input">
-                  <TextInput
-                    id="password"
-                    className="auth-input"
-                    type="password"
-                    placeholder="パスワード"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
+              <form className="mt-10 flex flex-col gap-y-5" action={formAction}>
+                <TextInput
+                  id="email"
+                  type="email"
+                  placeholder="メールアドレス"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <TextInput
+                  id="password"
+                  type="password"
+                  placeholder="パスワード"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
                 <div className="flex justify-center">
                   <Button type="submit" loading={isPending}>
                     Login

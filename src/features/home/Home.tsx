@@ -14,8 +14,8 @@ export default function Home() {
         <div className="content-wrap">
           <div className="left">
             <div className="w-full">
-              <span className="head">Welcome!</span>
-              <h1 className="title">
+              <p className="text-center font-bold text-3xl">Welcome</p>
+              <h1 className="mt-10 text-sm">
                 こちらでは、私の履歴書と職務経歴書がご確認いただけます。
               </h1>
               <div className="mt-8 flex justify-center">

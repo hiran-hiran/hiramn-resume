@@ -8,6 +8,7 @@ export default {
       md: "768px",
       lg: "1024px",
     },
+
     extend: {
       screens: {
         print: { raw: "print" },
