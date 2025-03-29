@@ -16,14 +16,6 @@ a {
   text-decoration: none;
 }
 
-@media print {
-  body,
-  page {
-    margin: 0;
-    box-shadow: 0;
-  }
-}
-
 @media all {
   .page-break {
     display: none;
@@ -31,6 +23,7 @@ a {
 }
 
 @media print {
+
   html,
   body {
     height: initial !important;
@@ -38,13 +31,14 @@ a {
     -webkit-print-color-adjust: exact;
   }
 
-  .print-none {
-    display: none !important;
+  body,
+  page {
+    margin: 0;
+    box-shadow: 0;
   }
 
-  .cv,
-  .resume {
-    width: 100%;
+  .print-none {
+    display: none !important;
   }
 
   .page-break {
@@ -52,13 +46,10 @@ a {
     display: block;
     page-break-before: auto;
   }
-
-  .resume .row02 td:nth-child(5) {
-    font-size: 80%;
-  }
 }
 
 @page {
-  size: auto;
+  /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
   margin: 10mm;
+  size: auto;
 }
